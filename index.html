@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>FelixTron - Manutenção de Celulares</title>
+    
+   <style>
+    :root {
+        --azul-tech: #001f3f;
+        --azul-neon: #0074D9;
+        --ciano: #00D4FF;
+        --roxo-tech: #6A0DAD;
+        --roxo-neon: #B10DC9;
+        --cinza-escuro: #1a1a1a;
+        --cinza-medio: #2d2d2d;
+        --cinza-claro: #404040;
+        --branco: #ffffff;
+        --preto: #000000;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, var(--azul-tech) 0%, var(--preto) 100%);
+        color: var(--branco);
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    /* ===== CABEÇALHO ===== */
+    header {
+        background: rgba(0, 31, 63, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 5%;
+        border-bottom: 3px solid var(--ciano);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .header-logo {
+        height: 150px;
+        width: auto;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 10px var(--ciano));
+    }
+    
+    .header-logo:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 15px var(--ciano));
+    }
+    
+    /* ===== MENU HORIZONTAL ESTILO BOTÕES ===== */
+    .menu-desktop {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+    }
+    
+    .menu-desktop li {
+        margin: 0;
+    }
+    
+    .menu-desktop a {
+        color: var(--branco);
+        padding: 12px 20px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        display: block;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 6px;
+        background: linear-gradient(135deg, var(--azul-neon), var(--roxo-tech));
+        border: 2px solid var(--ciano);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+        min-width: 100px;
+    }
+    
+    .menu-desktop a:hover {
+        background: linear-gradient(135deg, var(--roxo-tech), var(--azul-neon));
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 212, 255, 0.4);
+    }
+    
+    .menu-desktop a.active {
+        background: linear-gradient(135deg, var(--ciano), var(--azul-neon));
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    }
+    
+    /* ===== MENU HAMBÚRGUER (MOBILE) ===== */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40px;
+        height: 34px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+    
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--ciano);
+        border-radius: 3px;
+        transition: all 0.3s linear;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .menu-mobile {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(0, 31, 63, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: right 0.4s ease;
+        padding: 100px 30px 30px;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+        border-left: 2px solid var(--ciano);
+    }
+    
+    .menu-mobile.active {
+        right: 0;
+    }
+    
+    .menu-mobile ul {
+        list-style: none;
+    }
+    
+    .menu-mobile li {
+        margin-bottom: 15px;
+    }
+    
+    .menu-mobile a {
+        color: var(--branco);
+        padding: 15px 20px;
+        text-decoration: none;
+        font-weight: 600;
+        display: block;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--azul-neon), var(--roxo-tech));
+        border: 2px solid var(--ciano);
+        transition: all 0.3s;
+        text-align: center;
+    }
+    
+    .menu-mobile a:hover {
+        background: linear-gradient(135deg, var(--roxo-tech), var(--azul-neon));
+        transform: translateX(5px);
+    }
+    
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--ciano);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    .conteudo-principal {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 5%;
+        width: 100%;
+        flex: 1;
+    }
+    
+    /* SEÇÃO HOME */
+    .home-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 60px 0;
+        margin-bottom: 80px;
+    }
+    
+    .home-text {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    /* TÍTULO DIVIDIDO EM H1 E H2 */
+    .home-text h1 {
+        color: var(--ciano);
+        margin-bottom: 10px;
+        font-size: 3.5em;
+        line-height: 1.1;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        background: linear-gradient(45deg, var(--ciano), var(--azul-neon));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 0 10px;
+        word-wrap: break-word;
+        white-space: normal;
+        overflow: visible;
+    }
+    
+    .home-text h2 {
+        color: var(--azul-neon);
+        margin-bottom: 25px;
+        font-size: 2.2em;
+        line-height: 1.2;
+        text-align: center;
+        text-shadow: 0 0 5px rgba(0, 116, 217, 0.5);
+        padding: 0 10px;
+    }
+    
+    .home-text p {
+        color: var(--branco);
+        font-size: 1.3em;
+        text-align: justify;
+        margin-bottom: 35px;
+        line-height: 1.7;
+        opacity: 0.9;
+    }
+    
+    .home-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* IMAGEM AUMENTADA - AGORA MAIOR */
+    .home-image img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 20px;
+        border: 3px solid var(--ciano);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .home-image img:hover {
+        transform: scale(1.03);
+    }
+    
+    .btn-destaque {
+        display: inline-block;
+        background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
+        color: var(--branco);
+        padding: 16px 35px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2em;
+        transition: all 0.3s;
+        margin-top: 10px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 116, 217, 0.4);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .btn-destaque:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 116, 217, 0.6);
+    }
+    
+    /* SEÇÃO SERVIÇOS (NA HOME) */
+    .servicos-home {
+        text-align: center;
+        margin: 100px 0;
+    }
+    
+    .servicos-home h2 {
+        color: var(--ciano);
+        font-size: 2.8em;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+    }
+    
+    .servicos-home h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: var(--ciano);
+        border-radius: 2px;
+        box-shadow: 0 0 10px var(--ciano);
+    }
+    
+    .servicos-home p {
+        color: var(--branco);
+        font-size: 1.2em;
+        max-width: 800px;
+        margin: 0 auto 50px;
+        line-height: 1.6;
+        text-align: center;
+        opacity: 0.9;
+    }
+    
+    .servicos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .servico-item {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s;
+        backdrop-filter: blur(10px);
+    }
+    
+    .servico-item:hover {
+        transform: translateY(-10px);
+        border-color: var(--ciano);
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    }
+    
+    .servico-icon {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: var(--ciano);
+        filter: drop-shadow(0 0 5px var(--ciano));
+    }
+    
+    .servico-item h3 {
+        color: var(--azul-neon);
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+    
+    .servico-item p {
+        color: var(--branco);
+        margin-bottom: 20px;
+        font-size: 1em;
+        text-align: center;
+        opacity: 0.9;
+    }
+    
+    /* SEÇÃO ORÇAMENTO (PÁGINA SEPARADA) */
+    .orcamento-page {
+        display: none;
+        padding: 80px 5%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .orcamento-page h1 {
+        color: var(--ciano);
+        font-size: 3em;
+        margin-bottom: 30px;
+        text-align: center;
+        line-height: 1.2;
+        padding: 0 10px;
+    }
+    
+    .form-orcamento {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: var(--ciano);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        font-size: 1em;
+        font-family: inherit;
+        transition: all 0.3s;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--branco);
+    }
+    
+    /* CORREÇÃO DO SELECT - TEXTO VISÍVEL */
+    .form-group select option {
+        background: var(--cinza-escuro);
+        color: var(--branco);
+        padding: 10px;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--ciano);
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+    
+    .btn-enviar {
+        background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
+        color: var(--branco);
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 116, 217, 0.4);
+    }
+    
+    .btn-enviar:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 116, 217, 0.6);
+    }
+    
+    /* BOTÃO WHATSAPP */
+    .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #25D366, #128C7E);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: all 0.3s;
+        margin: 10px 0;
+        border: none;
+        box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .btn-whatsapp:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        background: linear-gradient(45deg, #128C7E, #25D366);
+    }
+    
+    .btn-whatsapp i {
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+    
+    .contato-opcoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .contato-info {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .contato-info p {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+    
+    /* ==== ESTILOS DA PÁGINA DE SERVIÇOS ==== */
+    .servico-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s;
+        backdrop-filter: blur(10px);
+        height: 100%;
+    }
+    
+    .servico-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--ciano);
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    }
+    
+    .servico-imagem {
+        width: 100%;
+        height: 200px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ciano);
+        font-size: 3em;
+    }
+    
+    .servico-card h3 {
+        color: var(--azul-neon);
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+    
+    .servico-card p {
+        color: var(--branco);
+        margin-bottom: 20px;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+    
+    .servico-card ul {
+        color: var(--branco);
+        opacity: 0.8;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .servico-card li {
+        margin-bottom: 8px;
+    }
+    
+    .servicos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    /* RODAPÉ */
+    footer {
+        background: rgba(0, 31, 63, 0.95);
+        text-align: center;
+        padding: 40px 5% 20px;
+        margin-top: 80px;
+        border-top: 3px solid var(--ciano);
+    }
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        text-align: left;
+    }
+    
+    .footer-logo img {
+        height: 60px;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 5px var(--ciano));
+    }
+    
+    .footer-links h3,
+    .footer-contact h3 {
+        color: var(--ciano);
+        margin-bottom: 20px;
+        font-size: 1.3em;
+    }
+    
+    .footer-links a {
+        color: var(--branco);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+        color: var(--ciano);
+    }
+    
+    .footer-contact p {
+        margin-bottom: 10px;
+        opacity: 0.9;
+    }
+    
+    .copyright {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* ===== NOVOS ESTILOS PARA MENSAGENS DE STATUS ===== */
+    .mensagem-status {
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        display: none;
+    }
+    
+    .sucesso {
+        background-color: rgba(46, 204, 113, 0.2);
+        border: 1px solid #2ecc71;
+        color: #2ecc71;
+    }
+    
+    .erro {
+        background-color: rgba(231, 76, 60, 0.2);
+        border: 1px solid #e74c3c;
+        color: #e74c3c;
+    }
+    
+    .carregando {
+        background-color: rgba(52, 152, 219, 0.2);
+        border: 1px solid #3498db;
+        color: #3498db;
+    }
+    
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 1024px) {
+        .home-section {
+            flex-direction: column;
+            text-align: center;
+            gap: 40px;
+        }
+        
+        .home-text h1 {
+            font-size: 3em;
+            text-align: center;
+        }
+        
+        .home-text h2 {
+            font-size: 1.8em;
+        }
+        
+        .home-text p {
+            text-align: center;
+        }
+        
+        .home-image {
+            order: -1;
+        }
+        
+        .home-image img {
+            max-width: 90%;
+        }
+        
+        .servicos-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .servicos-container {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+        
+        .btn-destaque {
+            width: auto;
+            display: inline-block;
+        }
+        
+        .contato-opcoes {
+            flex-direction: column;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        header {
+            padding: 15px 5%;
+        }
+        
+        .menu-desktop {
+            display: none;
+        }
+        
+        .hamburger {
+            display: flex;
+        }
+        
+        .home-text h1 {
+            font-size: 2.5em;
+            line-height: 1.2;
+        }
+        
+        .home-text h2 {
+            font-size: 1.6em;
+        }
+        
+        .home-text p {
+            font-size: 1.1em;
+        }
+        
+        .servicos-home h2 {
+            font-size: 2.2em;
+        }
+        
+        .orcamento-page h1 {
+            font-size: 2.5em;
+        }
+        
+        .servicos-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .servico-card {
+            padding: 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .home-text h1 {
+            font-size: 2em;
+            line-height: 1.2;
+        }
+        
+        .home-text h2 {
+            font-size: 1.4em;
+        }
+        
+        .servicos-home {
+            margin: 60px 0;
+        }
+        
+        .servicos-home h2 {
+            font-size: 1.8em;
+        }
+        
+        .servico-item {
+            padding: 20px;
+        }
+        
+        .form-orcamento {
+            padding: 25px;
+        }
+        
+        .orcamento-page h1 {
+            font-size: 2em;
+        }
+        
+        .btn-whatsapp {
+            width: 100%;
+            max-width: none;
+        }
+        
+        .servicos-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .servico-imagem {
+            height: 150px;
+            font-size: 2.5em;
+        }
+    }
+</style>
+    
+    <!-- Ícones do Font Awesome para o WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-container">
+            <img src="logofelixtron.png" alt="FelixTron - Manutenção de Celulares" class="header-logo">
+        </div>
+
+        <!-- Menu Desktop -->
+        <nav class="menu-desktop">
+            <ul style="display: flex; gap: 10px; list-style: none; margin: 0; padding: 0;">
+                <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#servicos" class="nav-link" data-page="servicos">Serviços</a></li>
+                <li><a href="#orcamento" class="nav-link" data-page="orcamento">Orçamento</a></li>
+                <li><a href="#blog" class="nav-link" data-page="blog">Blog</a></li>
+                <li><a href="#contato" class="nav-link" data-page="contato">Contato</a></li>
+                <!-- BOTÃO E-BOOK ADICIONADO -->
+                <li><a href="#ebook" class="nav-link" data-page="ebook">E-book</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <button class="hamburger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Menu Mobile -->
+    <div class="menu-mobile">
+        <button class="close-menu">&times;</button>
+        <ul>
+            <li><a href="#home" class="nav-link" data-page="home">Home</a></li>
+            <li><a href="#servicos" class="nav-link" data-page="servicos">Serviços</a></li>
+            <li><a href="#orcamento" class="nav-link" data-page="orcamento">Orçamento</a></li>
+            <li><a href="#blog" class="nav-link" data-page="blog">Blog</a></li>
+            <li><a href="#contato" class="nav-link" data-page="contato">Contato</a></li>
+            <!-- BOTÃO E-BOOK ADICIONADO NO MOBILE -->
+            <li><a href="#ebook" class="nav-link" data-page="ebook">E-book</a></li>
+        </ul>
+    </div>
+
+    <div class="conteudo-principal">
+        <!-- PÁGINA HOME -->
+        <div id="home-page" class="page active">
+            <section class="home-section">
+                <div class="home-text">
+                    <h1>FelixTron</h1>
+                    <h2>Manutenção de Celulares</h2>
+                    <p>
+                        Assistência técnica especializada em reparos de smartphones. Na FelixTron, oferecemos soluções 
+                        completas para problemas com telas quebradas, baterias com defeito, reparos de placa e muito mais. 
+                        Nossa equipe qualificada está pronta para deixar seu celular como novo, com garantia e qualidade.
+                    </p>
+                    <a href="#orcamento" class="btn-destaque nav-link" data-page="orcamento">Solicite um Orçamento</a>
+                </div>
+
+                <div class="home-image">
+                    <img src="circuito.jpeg" alt="Técnico realizando manutenção em celular" style="max-width: 600px; width: 100%;">
+                </div>
+            </section>
+
+            <!-- Seção Serviços na Home -->
+            <section class="servicos-home">
+                <h2>Nossos Serviços</h2>
+                <p>
+                    Oferecemos uma gama completa de serviços para atender todas as suas necessidades em manutenção de celulares. 
+                    Trabalhamos com as melhores peças do mercado e contamos com técnicos especializados para garantir a qualidade do serviço.
+                </p>
+                
+                <div class="servicos-grid">
+                    <div class="servico-item">
+                        <div class="servico-icon">📱</div>
+                        <h3>Troca de Tela</h3>
+                        <p>Reparo especializado para telas quebradas ou com problemas de toque. Utilizamos peças de alta qualidade com garantia.</p>
+                    </div>
+                    
+                    <div class="servico-item">
+                        <div class="servico-icon">🔋</div>
+                        <h3>Troca de Bateria</h3>
+                        <p>Substituição de baterias com baixa performance ou problemas de carga. Garantia de durabilidade e performance.</p>
+                    </div>
+                    
+                    <div class="servico-item">
+                        <div class="servico-icon">🔧</div>
+                        <h3>Reparo de Placa</h3>
+                        <p>Diagnóstico e reparo de problemas complexos na placa-mãe do dispositivo. Técnicos especializados em microsolda.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PÁGINA E-BOOK -->
+        <div id="ebook-page" class="page" style="display: none; padding: 80px 5%; text-align: center;">
+            <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px;">E-book</h1>
+            <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">Página em desenvolvimento...</p>
+        </div>
+
+        <!-- PÁGINA ORÇAMENTO (MODIFICADA) -->
+        <div id="orcamento-page" class="page orcamento-page">
+            <h1>Solicite um Orçamento</h1>
+            
+            <!-- Mensagens de status -->
+            <div id="mensagemStatus" class="mensagem-status"></div>
+            
+            <div class="form-orcamento">
+                <!-- ENDPOINT DO FORMSPREE INSERIDO AQUI -->
+                <form id="formOrcamento" action="https://formspree.io/f/movkqngb" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="aparelho">Modelo do Aparelho:</label>
+                        <input type="text" id="aparelho" name="aparelho" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="servico">Tipo de Serviço:</label>
+                        <select id="servico" name="servico" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="troca-tela">Troca de Tela</option>
+                            <option value="troca-bateria">Troca de Bateria</option>
+                            <option value="reparo-placa">Reparo de Placa</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Descrição do Problema:</label>
+                        <textarea id="descricao" name="descricao" required></textarea>
+                    </div>
+                    
+                    <!-- Campo oculto para assunto personalizado -->
+                    <input type="hidden" name="_subject" value="Novo Orçamento - FelixTron">
+                    
+                    <button type="submit" class="btn-enviar">Solicitar Orçamento</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- PÁGINA CONTATO (MODIFICADA COM WHATSAPP) -->
+        <div id="contato-page" class="page" style="display: none; padding: 80px 5%; max-width: 1000px; margin: 0 auto;">
+            <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Entre em Contato</h1>
+            
+            <!-- Mensagens de status -->
+            <div id="mensagemStatusContato" class="mensagem-status"></div>
+            
+            <div class="form-orcamento">
+                <!-- ENDPOINT DO FORMSPREE INSERIDO AQUI -->
+                <form id="formContato" action="https://formspree.io/f/movkqngb" method="POST">
+                    <div class="form-group">
+                        <label for="nomeContato">Nome Completo:</label>
+                        <input type="text" id="nomeContato" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emailContato">E-mail:</label>
+                        <input type="email" id="emailContato" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefoneContato">Telefone:</label>
+                        <input type="tel" id="telefoneContato" name="telefone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assunto">Assunto:</label>
+                        <input type="text" id="assunto" name="assunto" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    
+                    <!-- Campo oculto para assunto personalizado -->
+                    <input type="hidden" name="_subject" value="Novo Contato - FelixTron">
+                    
+                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+            
+            <div class="contato-info">
+                <h2 style="color: var(--azul-neon); margin-bottom: 20px; text-align: center;">Outras Formas de Contato</h2>
+                <p style="margin-bottom: 10px; text-align: center;">📱 (73) 98894-5407</p>
+                <p style="margin-bottom: 10px; text-align: center;">✉️ contato@felixtron.com.br</p>
+                <p style="margin-bottom: 30px; text-align: center;">📍 Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+            </div>
+            
+            <div class="contato-opcoes">
+                <h3 style="color: var(--ciano); margin-bottom: 20px; text-align: center;">Fale conosco diretamente pelo WhatsApp</h3>
+                <a href="https://wa.me/5573988945407?text=Olá! Gostaria de solicitar um orçamento para meu celular." 
+                   class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Enviar Mensagem no WhatsApp
+                </a>
+                <p style="text-align: center; margin-top: 10px; opacity: 0.8;">Clique acima para conversar diretamente conosco</p>
+            </div>
+        </div>
+
+        <!-- PÁGINAS FUTURAS -->
+       <!-- PÁGINA SERVIÇOS (SUBSTITUIR A ATUAL) -->
+<div id="servicos-page" class="page" style="display: none; padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
+    <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Nossos Serviços</h1>
+    
+    <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; text-align: center; opacity: 0.9;">
+        Oferecemos uma gama completa de serviços especializados em manutenção de celulares. 
+        Trabalhamos com as melhores peças do mercado e contamos com técnicos qualificados.
+    </p>
+
+    <div class="servicos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
+        
+        <!-- Troca de Tela -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                📱
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Tela</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Reparo especializado para telas quebradas ou com problemas de toque. Utilizamos peças originais 
+                e de alta qualidade com garantia. Recuperamos a funcionalidade completa do seu dispositivo.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Telas originais e de qualidade</li>
+                <li style="margin-bottom: 8px;">Garantia no serviço</li>
+                <li style="margin-bottom: 8px;">Troca rápida e eficiente</li>
+            </ul>
+        </div>
+
+        <!-- Troca de Bateria -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                🔋
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Bateria</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Substituição de baterias com baixa performance ou problemas de carga. Garantimos 
+                baterias com máxima durabilidade e performance para seu dispositivo.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Baterias de alta capacidade</li>
+                <li style="margin-bottom: 8px;">Melhora significativa na autonomia</li>
+                <li style="margin-bottom: 8px;">Garantia de durabilidade</li>
+            </ul>
+        </div>
+
+        <!-- Troca de Conector de Carga -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                🔌
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Conector de Carga</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Solução para problemas de carregamento, conectores soltos ou danificados. 
+                Substituição por conectores de qualidade para garantir carregamento eficiente.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Conectores originais</li>
+                <li style="margin-bottom: 8px;">Carregamento rápido restaurado</li>
+                <li style="margin-bottom: 8px;">Proteção contra curto-circuito</li>
+            </ul>
+        </div>
+
+        <!-- Reparo em Placa -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                🔧
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Reparo em Placa</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Diagnóstico e reparo de problemas complexos na placa-mãe do dispositivo. 
+                Técnicos especializados em microsolda e componentes eletrônicos.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Microsolda especializada</li>
+                <li style="margin-bottom: 8px;">Diagnóstico preciso</li>
+                <li style="margin-bottom: 8px;">Componentes de qualidade</li>
+            </ul>
+        </div>
+
+        <!-- Desoxidação -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                💧
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Desoxidação</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Limpeza e recuperação de aparelhos que sofreram contato com líquidos. 
+                Processo especializado para evitar corrosão e danos permanentes.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Limpeza profunda</li>
+                <li style="margin-bottom: 8px;">Prevenção de corrosão</li>
+                <li style="margin-bottom: 8px;">Recuperação de componentes</li>
+            </ul>
+        </div>
+
+        <!-- Restauração do Sistema Operacional -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                ⚙️
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Restauração do Sistema</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Solução para problemas de software, lentidão, travamentos e atualizações. 
+                Recuperamos a performance original do seu dispositivo.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Formatação e reinstalação</li>
+                <li style="margin-bottom: 8px;">Atualização de sistema</li>
+                <li style="margin-bottom: 8px;">Otimização de performance</li>
+            </ul>
+        </div>
+
+        <!-- Câmera e Módulos -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                📸
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Câmera</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Reparo ou substituição de câmeras traseiras, frontais e módulos com problemas 
+                de foco, imagem escura ou danos físicos.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Câmeras originais</li>
+                <li style="margin-bottom: 8px;">Calibração profissional</li>
+                <li style="margin-bottom: 8px;">Qualidade de imagem garantida</li>
+            </ul>
+        </div>
+
+        <!-- Limpeza e Manutenção Preventiva -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                ✨
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Manutenção Preventiva</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Limpeza interna completa e verificação de componentes para prevenir 
+                problemas futuros e manter seu dispositivo em perfeito estado.
+            </p>
+            <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 8px;">Limpeza interna profunda</li>
+                <li style="margin-bottom: 8px;">Verificação de componentes</li>
+                <li style="margin-bottom: 8px;">Prevenção de problemas</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">
+            Não encontrou o serviço que precisa? Entre em contato conosco!
+        </p>
+        <a href="#contato" class="btn-destaque nav-link" data-page="contato" style="display: inline-block; width: auto; padding: 15px 30px;">Fale Conosco</a>
+    </div>
+</div>
+
+        <div id="blog-page" class="page" style="display: none; padding: 80px 5%; text-align: center;">
+            <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px;">Blog</h1>
+            <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">Página em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logofelixtron.png" alt="FelixTron">
+                <p>Sua assistência técnica de confiança para reparos de celulares.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <a href="#home" class="nav-link" data-page="home">Home</a>
+                <a href="#servicos" class="nav-link" data-page="servicos">Serviços</a>
+                <a href="#orcamento" class="nav-link" data-page="orcamento">Orçamento</a>
+                <a href="#blog" class="nav-link" data-page="blog">Blog</a>
+                <a href="#ebook" class="nav-link" data-page="ebook">E-book</a>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p>📱 (73) 98894-5407</p>
+                <p>✉️ contato@felixtron.com.br</p>
+                <p>📍 Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+                <a href="https://wa.me/5573988945407?text=Olá! Gostaria de solicitar um orçamento para meu celular." 
+                   target="_blank" style="color: var(--ciano); text-decoration: none; margin-top: 10px; display: inline-block;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 FelixTron - Manutenção de Celulares - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const hamburger = document.querySelector('.hamburger');
+            const menuMobile = document.querySelector('.menu-mobile');
+            const closeMenu = document.querySelector('.close-menu');
+            
+            // Função para mostrar página específica
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.style.display = 'none';
+                    page.classList.remove('active');
+                });
+                
+                const activePage = document.getElementById(pageId + '-page');
+                if (activePage) {
+                    activePage.style.display = 'block';
+                    activePage.classList.add('active');
+                }
+                
+                // Atualizar menu ativo
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Fechar menu mobile se estiver aberto
+                if (menuMobile.classList.contains('active')) {
+                    menuMobile.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            }
+            
+            // Configurar eventos de clique nos links de navegação
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Scroll para o topo
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Menu Hamburguer
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    menuMobile.classList.toggle('active');
+                });
+            }
+            
+            // Fechar menu mobile
+            if (closeMenu) {
+                closeMenu.addEventListener('click', function() {
+                    menuMobile.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            }
+            
+            // Formulário de orçamento (MODIFICADO)
+            const formOrcamento = document.getElementById('formOrcamento');
+            const mensagemStatus = document.getElementById('mensagemStatus');
+            
+            if (formOrcamento) {
+                formOrcamento.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Mostrar mensagem de carregamento
+                    mostrarMensagem('Enviando solicitação...', 'carregando', mensagemStatus);
+                    
+                    try {
+                        const response = await fetch(formOrcamento.action, {
+                            method: 'POST',
+                            body: new FormData(formOrcamento),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            mostrarMensagem('Orçamento solicitado com sucesso! Entraremos em contato em breve.', 'sucesso', mensagemStatus);
+                            formOrcamento.reset();
+                        } else {
+                            throw new Error('Erro ao enviar formulário');
+                        }
+                    } catch (error) {
+                        mostrarMensagem('Erro ao enviar solicitação. Tente novamente ou entre em contato por telefone.', 'erro', mensagemStatus);
+                    }
+                });
+            }
+            
+            // Formulário de contato (NOVO)
+            const formContato = document.getElementById('formContato');
+            const mensagemStatusContato = document.getElementById('mensagemStatusContato');
+            
+            if (formContato) {
+                formContato.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Mostrar mensagem de carregamento
+                    mostrarMensagem('Enviando mensagem...', 'carregando', mensagemStatusContato);
+                    
+                    try {
+                        const response = await fetch(formContato.action, {
+                            method: 'POST',
+                            body: new FormData(formContato),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            mostrarMensagem('Mensagem enviada com sucesso! Retornaremos em breve.', 'sucesso', mensagemStatusContato);
+                            formContato.reset();
+                        } else {
+                            throw new Error('Erro ao enviar mensagem');
+                        }
+                    } catch (error) {
+                        mostrarMensagem('Erro ao enviar mensagem. Tente novamente ou entre em contato por telefone.', 'erro', mensagemStatusContato);
+                    }
+                });
+            }
+            
+            // Função para mostrar mensagens de status
+            function mostrarMensagem(texto, tipo, elemento) {
+                elemento.textContent = texto;
+                elemento.className = 'mensagem-status ' + tipo;
+                elemento.style.display = 'block';
+                
+                // Auto-ocultar mensagens de sucesso após 5 segundos
+                if (tipo === 'sucesso') {
+                    setTimeout(() => {
+                        elemento.style.display = 'none';
+                    }, 5000);
+                }
+            }
+            
+            // Mostrar página home por padrão
+            showPage('home');
+        });
+    </script>
+</body>
+</html>

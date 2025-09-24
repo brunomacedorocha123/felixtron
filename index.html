@@ -6,7 +6,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>FelixTron - Manutenção de Celulares</title>
     
-   <style>
+  <style>
     :root {
         --azul-tech: #001f3f;
         --azul-neon: #0074D9;
@@ -771,13 +771,21 @@
             font-size: 2.5em;
         }
         
+        /* CORREÇÃO PARA OS CARDS DE SERVIÇOS NO MOBILE */
+        #servicos-page {
+            padding: 40px 20px !important;
+        }
+        
         .servicos-container {
             grid-template-columns: 1fr;
             gap: 20px;
+            padding: 0 10px;
         }
         
         .servico-card {
             padding: 20px;
+            margin: 0;
+            width: 100%;
         }
     }
     
@@ -816,13 +824,33 @@
             max-width: none;
         }
         
+        /* CORREÇÃO PARA OS CARDS DE SERVIÇOS NO MOBILE PEQUENO */
+        #servicos-page {
+            padding: 30px 15px !important;
+        }
+        
         .servicos-container {
             grid-template-columns: 1fr;
+            gap: 15px;
+            padding: 0 5px;
+        }
+        
+        .servico-card {
+            padding: 15px;
+            margin: 0 5px;
         }
         
         .servico-imagem {
             height: 150px;
             font-size: 2.5em;
+        }
+        
+        .servico-card h3 {
+            font-size: 1.3em;
+        }
+        
+        .servico-card p {
+            font-size: 0.9em;
         }
     }
 </style>

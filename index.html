@@ -832,24 +832,24 @@ footer {
         max-width: none;
     }
     
-  @media (max-width: 480px) {
+ @media (max-width: 480px) {
     #servicos-page {
         padding: 30px 10px !important;
     }
     
     .servicos-container {
-        grid-template-columns: 1fr;
+        display: flex;           /* muda para flex para centralizar melhor */
+        flex-direction: column;  /* empilha os cards */
         gap: 20px;
         padding: 0;
         margin: 0 auto;
-        justify-items: center;
+        align-items: center;     /* centraliza os cards */
     }
     
     .servico-card {
         padding: 18px;
-        margin: 0 auto; /* centraliza horizontalmente */
-        width: 90%;      /* deixa uma margem lateral */
-        max-width: 400px; /* limite máximo para não esticar demais */
+        width: calc(100% - 20px); /* deixa pequenas margens laterais */
+        max-width: 400px;
     }
     
     .servico-imagem {
@@ -865,6 +865,7 @@ footer {
         font-size: 0.9em;
     }
 }
+
 
 </style>
     

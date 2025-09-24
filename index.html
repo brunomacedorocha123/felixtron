@@ -832,39 +832,43 @@ footer {
         max-width: none;
     }
     
- @media (max-width: 480px) {
+@media (max-width: 480px) {
     #servicos-page {
         padding: 30px 10px !important;
     }
-    
+
     .servicos-container {
-        display: flex;           /* muda para flex para centralizar melhor */
-        flex-direction: column;  /* empilha os cards */
+        display: grid; /* mantém grid se quiser */
+        grid-template-columns: 1fr;
         gap: 20px;
         padding: 0;
         margin: 0 auto;
-        align-items: center;     /* centraliza os cards */
+        justify-items: center; /* centraliza os cards */
     }
-    
+
     .servico-card {
         padding: 18px;
-        width: calc(100% - 20px); /* deixa pequenas margens laterais */
-        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto; /* centraliza horizontalmente */
+        width: 100%; /* ocupa todo espaço disponível do container */
+        max-width: 360px; /* limita largura para não ficar gigante */
+        box-sizing: border-box; /* considera padding dentro da largura */
     }
-    
+
     .servico-imagem {
         height: 150px;
         font-size: 2.5em;
     }
-    
+
     .servico-card h3 {
         font-size: 1.3em;
     }
-    
+
     .servico-card p {
         font-size: 0.9em;
     }
 }
+
 
 
 </style>

@@ -7,7 +7,7 @@
     <title>FelixTron - Manutenção de Celulares</title>
     
   <style>
-    :root {
+   :root {
     --azul-tech: #001f3f;
     --azul-neon: #0074D9;
     --ciano: #00D4FF;
@@ -600,11 +600,14 @@ header {
     margin-bottom: 8px;
 }
 
+/* CORREÇÃO PRINCIPAL: AJUSTE DO CONTAINER DE SERVIÇOS */
 .servicos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* RODAPÉ */
@@ -771,24 +774,26 @@ footer {
         font-size: 2.5em;
     }
     
-    /* CORREÇÃO PARA OS CARDS DE SERVIÇOS NO MOBILE */
+    /* CORREÇÃO PRINCIPAL PARA OS CARDS DE SERVIÇOS NO MOBILE */
     #servicos-page {
         padding: 40px 20px !important;
     }
     
     .servicos-container {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
+        gap: 25px;
+        padding: 0 15px; /* Aumentei o padding para dar mais espaço nas laterais */
         margin: 0 auto;
         max-width: 100%;
+        justify-items: center; /* Centraliza os cards */
     }
     
     .servico-card {
         padding: 20px;
-        margin: 0 auto;
-        width: calc(100% - 20px);
+        margin: 0;
+        width: 100%; /* Ocupa 100% do container */
         max-width: 100%;
+        box-sizing: border-box; /* Garante que padding não afete a largura */
     }
 }
 
@@ -834,15 +839,16 @@ footer {
     
     .servicos-container {
         grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 0 5px;
+        gap: 20px;
+        padding: 0 10px; /* Espaçamento lateral adequado */
         margin: 0 auto;
+        justify-items: center; /* Centraliza os cards */
     }
     
     .servico-card {
-        padding: 15px;
-        margin: 0 auto;
-        width: calc(100% - 10px);
+        padding: 18px;
+        margin: 0;
+        width: 100%; /* Ocupa toda a largura disponível */
         max-width: 100%;
     }
     
@@ -857,6 +863,19 @@ footer {
     
     .servico-card p {
         font-size: 0.9em;
+    }
+}
+
+/* CORREÇÃO ADICIONAL PARA GARANTIR QUE OS CARDS NÃO FICAM COLADOS NAS BORDAS */
+@media (max-width: 768px) {
+    .conteudo-principal {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #servicos-page .conteudo-principal {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 </style>

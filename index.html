@@ -145,11 +145,13 @@
         transform: rotate(-45deg) translate(7px, -7px);
     }
     
+    /* CORREÇÃO DO MENU MOBILE */
     .menu-mobile {
-        display: none;
+        display: flex;
+        flex-direction: column;
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -100%; /* Começa fora da tela */
         width: 280px;
         height: 100vh;
         background: rgba(0, 31, 63, 0.98);
@@ -161,16 +163,19 @@
         border-left: 2px solid var(--ciano);
     }
     
+    /* CORREÇÃO: Quando active, mostra o menu */
     .menu-mobile.active {
-        right: 0;
+        right: 0; /* Traz para a tela */
     }
     
     .menu-mobile ul {
         list-style: none;
+        width: 100%;
     }
     
     .menu-mobile li {
         margin-bottom: 15px;
+        width: 100%;
     }
     
     .menu-mobile a {
@@ -184,6 +189,7 @@
         border: 2px solid var(--ciano);
         transition: all 0.3s;
         text-align: center;
+        width: 100%;
     }
     
     .menu-mobile a:hover {
@@ -200,6 +206,23 @@
         color: var(--ciano);
         font-size: 24px;
         cursor: pointer;
+        z-index: 1002;
+    }
+    
+    /* Overlay para quando o menu estiver aberto */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .menu-overlay.active {
+        display: block;
     }
     
     /* ===== CONTEÚDO PRINCIPAL ===== */
@@ -1223,6 +1246,11 @@
             const menuMobile = document.querySelector('.menu-mobile');
             const closeMenu = document.querySelector('.close-menu');
             
+            // Criar overlay dinamicamente
+            const overlay = document.createElement('div');
+            overlay.className = 'menu-overlay';
+            document.body.appendChild(overlay);
+            
             // Função para mostrar página específica
             function showPage(pageId) {
                 pages.forEach(page => {
@@ -1245,10 +1273,23 @@
                 });
                 
                 // Fechar menu mobile se estiver aberto
-                if (menuMobile.classList.contains('active')) {
-                    menuMobile.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
+                closeMobileMenu();
+            }
+            
+            // Função para abrir menu mobile
+            function openMobileMenu() {
+                menuMobile.classList.add('active');
+                hamburger.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Função para fechar menu mobile
+            function closeMobileMenu() {
+                menuMobile.classList.remove('active');
+                hamburger.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
             }
             
             // Configurar eventos de clique nos links de navegação
@@ -1266,20 +1307,28 @@
             // Menu Hamburguer
             if (hamburger) {
                 hamburger.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    menuMobile.classList.toggle('active');
+                    if (menuMobile.classList.contains('active')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
                 });
             }
             
-            // Fechar menu mobile
+            // Fechar menu mobile com botão X
             if (closeMenu) {
-                closeMenu.addEventListener('click', function() {
-                    menuMobile.classList.remove('active');
-                    hamburger.classList.remove('active');
-                });
+                closeMenu.addEventListener('click', closeMobileMenu);
             }
             
-            // Formulário de orçamento (MODIFICADO)
+            // Fechar menu mobile clicando no overlay
+            overlay.addEventListener('click', closeMobileMenu);
+            
+            // Fechar menu mobile ao clicar em um link do menu mobile
+            document.querySelectorAll('.menu-mobile .nav-link').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+            
+            // Formulário de orçamento
             const formOrcamento = document.getElementById('formOrcamento');
             const mensagemStatus = document.getElementById('mensagemStatus');
             
@@ -1311,7 +1360,7 @@
                 });
             }
             
-            // Formulário de contato (NOVO)
+            // Formulário de contato
             const formContato = document.getElementById('formContato');
             const mensagemStatusContato = document.getElementById('mensagemStatusContato');
             

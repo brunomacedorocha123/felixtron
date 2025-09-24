@@ -833,26 +833,30 @@ footer {
     }
     
 @media (max-width: 480px) {
+    /* Container principal da seção */
     #servicos-page {
         padding: 30px 10px !important;
+        box-sizing: border-box; /* garante que padding não aumente largura */
     }
 
+    /* Container dos cards */
     .servicos-container {
-        display: grid; /* mantém grid se quiser */
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;           /* flex para controle total de alinhamento */
+        flex-direction: column;  /* empilha os cards verticalmente */
+        align-items: center;     /* centraliza horizontalmente */
         padding: 0;
         margin: 0 auto;
-        justify-items: center; /* centraliza os cards */
+        width: 100%;             /* ocupa toda a largura da tela */
+        box-sizing: border-box;
     }
 
+    /* Cada card */
     .servico-card {
         padding: 18px;
-        margin-left: auto;
-        margin-right: auto; /* centraliza horizontalmente */
-        width: 100%; /* ocupa todo espaço disponível do container */
-        max-width: 360px; /* limita largura para não ficar gigante */
-        box-sizing: border-box; /* considera padding dentro da largura */
+        margin: 0 auto;          /* centraliza o card */
+        width: 95%;              /* deixa pequenas margens laterais iguais */
+        max-width: 360px;        /* limita tamanho máximo do card */
+        box-sizing: border-box;  /* padding não aumenta largura */
     }
 
     .servico-imagem {
@@ -868,8 +872,6 @@ footer {
         font-size: 0.9em;
     }
 }
-
-
 
 </style>
     

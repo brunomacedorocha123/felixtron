@@ -832,23 +832,23 @@ footer {
         max-width: none;
     }
     
-    /* CORREÇÃO PARA OS CARDS DE SERVIÇOS NO MOBILE PEQUENO */
+   @media (max-width: 480px) {
     #servicos-page {
-        padding: 30px 15px !important;
+        padding: 30px 10px !important;
     }
     
     .servicos-container {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 0 10px; /* Espaçamento lateral adequado */
+        padding: 0;
         margin: 0 auto;
-        justify-items: center; /* Centraliza os cards */
+        justify-items: center;
     }
     
     .servico-card {
         padding: 18px;
         margin: 0;
-        width: 95%; /* Ocupa toda a largura disponível */
+        width: 100%;
         max-width: 100%;
     }
     
@@ -863,19 +863,6 @@ footer {
     
     .servico-card p {
         font-size: 0.9em;
-    }
-}
-
-/* CORREÇÃO ADICIONAL PARA GARANTIR QUE OS CARDS NÃO FICAM COLADOS NAS BORDAS */
-@media (max-width: 768px) {
-    .conteudo-principal {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    #servicos-page .conteudo-principal {
-        padding-left: 10px;
-        padding-right: 10px;
     }
 }
 </style>

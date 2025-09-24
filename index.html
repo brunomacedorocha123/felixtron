@@ -832,7 +832,7 @@ footer {
         max-width: none;
     }
     
-   @media (max-width: 480px) {
+  @media (max-width: 480px) {
     #servicos-page {
         padding: 30px 10px !important;
     }
@@ -847,9 +847,9 @@ footer {
     
     .servico-card {
         padding: 18px;
-        margin: 0;
-        width: 100%;
-        max-width: 100%;
+        margin: 0 auto; /* centraliza horizontalmente */
+        width: 90%;      /* deixa uma margem lateral */
+        max-width: 400px; /* limite máximo para não esticar demais */
     }
     
     .servico-imagem {
@@ -865,6 +865,7 @@ footer {
         font-size: 0.9em;
     }
 }
+
 </style>
     
     <!-- Ícones do Font Awesome para o WhatsApp -->

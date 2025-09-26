@@ -1228,11 +1228,43 @@
     </div>
 </div>
 
-        <div id="blog-page" class="page" style="display: none; padding: 80px 5%; text-align: center;">
-            <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px;">Blog</h1>
-            <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">Página em desenvolvimento...</p>
+    <!-- PÁGINA BLOG -->
+<div id="blog-page" class="page" style="display: none; padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
+    <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Blog - Dicas Técnicas</h1>
+    <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; text-align: center; opacity: 0.9;">
+        Confira nossas dicas exclusivas para manter seu celular em perfeito estado e evitar problemas comuns.
+    </p>
+
+    <div class="servicos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
+        
+        <!-- Card da matéria sobre 5 dicas -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px); cursor: pointer;" onclick="window.open('5dicascelular.html', '_blank')">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img src="cuidadocelular.jpg" alt="5 Dicas para Preservar seu Celular" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Cuidados Essenciais com seu Smartphone</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Aprenda técnicas simples mas eficazes para aumentar a durabilidade do seu smartphone e evitar reparos desnecessários.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                <span style="color: var(--ciano); font-size: 0.9em;">📱 Dicas Técnicas</span>
+                <span style="color: var(--branco); opacity: 0.7; font-size: 0.9em;">5 min de leitura</span>
+            </div>
         </div>
+
+        <!-- Cards futuros podem ser adicionados aqui -->
+        <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px); opacity: 0.6;">
+            <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--ciano); font-size: 3em;">
+                📝
+            </div>
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Novo Artigo em Breve</h3>
+            <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
+                Estamos preparando mais conteúdo técnico exclusivo para você!
+            </p>
+        </div>
+
     </div>
+</div>
 
     <footer>
         <div class="footer-content">
@@ -1438,6 +1470,8 @@
             // Mostrar página home por padrão
             showPage('home');
         });
+
     </script>
+   
 </body>
 </html>

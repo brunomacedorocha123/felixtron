@@ -276,10 +276,12 @@ header {
 .home-text p {
     color: var(--branco);
     font-size: 1.3em;
-    text-align: justify;
+    text-align: justify; /* JÁ ESTÁ ASSIM - MANTÉM */
     margin-bottom: 35px;
     line-height: 1.7;
     opacity: 0.9;
+    hyphens: none; /* ADICIONAR ESTA LINHA */
+    word-wrap: break-word; /* ADICIONAR ESTA LINHA */
 }
 
 .home-image {

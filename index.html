@@ -6,8 +6,8 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>FelixTron - Manutenção de Celulares</title>
     
-    <style>
-        :root {
+  <style>
+:root {
     --azul-tech: #001f3f;
     --azul-neon: #0074D9;
     --ciano: #00D4FF;
@@ -35,6 +35,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* ===== FORÇAR TODOS OS PARÁGRAFOS A FICAREM JUSTIFICADOS ===== */
+p {
+    text-align: justify !important;
+    hyphens: none !important;
+    word-wrap: break-word !important;
 }
 
 /* ===== CABEÇALHO ===== */
@@ -276,12 +283,9 @@ header {
 .home-text p {
     color: var(--branco);
     font-size: 1.3em;
-    text-align: justify; /* JÁ ESTÁ ASSIM - MANTÉM */
     margin-bottom: 35px;
     line-height: 1.7;
     opacity: 0.9;
-    hyphens: none; /* ADICIONAR ESTA LINHA */
-    word-wrap: break-word; /* ADICIONAR ESTA LINHA */
 }
 
 .home-image {
@@ -363,7 +367,6 @@ header {
     max-width: 800px;
     margin: 0 auto 50px;
     line-height: 1.6;
-    text-align: center;
     opacity: 0.9;
 }
 
@@ -407,7 +410,6 @@ header {
     color: var(--branco);
     margin-bottom: 20px;
     font-size: 1em;
-    text-align: center;
     opacity: 0.9;
 }
 
@@ -767,6 +769,22 @@ footer {
     color: #3498db;
 }
 
+/* ===== SOBRESCREVER TODOS OS ESTILOS INLINE DOS PARÁGRAFOS ===== */
+#blog-page p,
+#servicos-page p,
+#home-page p,
+.servico-card p,
+.servico-item p,
+.blog-card p,
+.home-text p,
+.servicos-home p,
+.contato-info p,
+.footer-contact p {
+    text-align: justify !important;
+    hyphens: none !important;
+    word-wrap: break-word !important;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .home-section {
@@ -782,10 +800,6 @@ footer {
     
     .home-text h2 {
         font-size: 1.8em;
-    }
-    
-    .home-text p {
-        text-align: center;
     }
     
     .home-image {
@@ -974,7 +988,7 @@ footer {
         font-size: 0.9em !important;
     }
 }
-    </style>
+</style>
     
     <!-- Ícones do Font Awesome para o WhatsApp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

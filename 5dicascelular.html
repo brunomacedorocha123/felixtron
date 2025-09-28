@@ -90,7 +90,9 @@
             font-size: 1.5em;
             display: flex;
             align-items: center;
+            justify-content: center; /* Centraliza o título */
             gap: 10px;
+            text-align: center; /* Garante alinhamento central do texto */
         }
 
         .dica-number {
@@ -103,6 +105,18 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
+        }
+
+        .dica p {
+            text-align: justify; /* Justifica o texto */
+            margin-bottom: 10px;
+            /* Evita hifens nas quebras de linha */
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            hyphens: none;
+            /* Permite quebra de palavras longas se necessário */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .dica img {
@@ -176,6 +190,19 @@
             .dica {
                 padding: 20px;
             }
+            
+            /* Melhorias para mobile */
+            .dica p {
+                text-align: justify;
+                /* Garante que o texto preencha toda a largura disponível */
+                width: 100%;
+                /* Permite quebra de palavras longas para preencher a borda */
+                word-break: break-word;
+                /* Evita que palavras sejam quebradas com hífen */
+                -webkit-hyphens: none;
+                -moz-hyphens: none;
+                hyphens: none;
+            }
         }
     </style>
 </head>
@@ -200,7 +227,7 @@
     <!-- Conteúdo do Artigo -->
     <div class="container">
         <article class="article-content">
-            <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.9;">
+            <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.9; text-align: justify;">
                 Seu smartphone é uma ferramenta essencial no dia a dia. Seguindo estas dicas simples, 
                 você pode aumentar significativamente sua vida útil e evitar reparos desnecessários.
             </p>
@@ -251,12 +278,17 @@
             </div>
 
             <div style="background: rgba(0, 212, 255, 0.1); padding: 25px; border-radius: 10px; margin-top: 40px; border-left: 4px solid var(--ciano);">
-                <h3 style="color: var(--ciano); margin-bottom: 15px;">💡 Dica Bônus da FelixTron</h3>
-                <p>Traga seu celular para uma revisão preventiva conosco! Identificamos problemas antes que se tornem graves e damos orientações personalizadas para o seu dispositivo.</p>
+                <h3 style="color: var(--ciano); margin-bottom: 15px; text-align: center;">💡 Dica Bônus da FelixTron</h3>
+                <p style="text-align: justify;">Traga seu celular para uma revisão preventiva conosco! Identificamos problemas antes que se tornem graves e damos orientações personalizadas para o seu dispositivo.</p>
             </div>
         </article>
 
-        <!-- Chamada para Ação CORRIGIDA -->
+        <!-- Chamada para Ação -->
+        <div style="text-align: center; margin: 40px 0;">
+            <button class="btn-orcamento" onclick="redirecionarParaOrcamento()">
+                <i class="fas fa-tools"></i> Solicitar Orçamento
+            </button>
+        </div>
     </div>
 
     <!-- Rodapé -->

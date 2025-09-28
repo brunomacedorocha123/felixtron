@@ -1086,12 +1086,10 @@ footer {
         </div>
 
         <!-- PÁGINA E-BOOK -->
-       <!-- PÁGINA E-BOOK (SUBSTITUIR A ATUAL) -->
-<div id="ebook-page" class="page" style="display: none; padding: 80px 5%; max-width: 1200px; margin: 0 auto;">
+     <div id="ebook-page" class="page" style="display: none; padding: 80px 5%; max-width: 1200px; margin: 0 auto;">
     <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 20px; text-align: center;">Guia Técnico de Smartphones</h1>
     
-        <p style="opacity: 0.8; text-align: center;">Por Bruno Felix - FelixTron</p>
-    </div>
+    <p style="opacity: 0.8; text-align: center;">Por Bruno Felix - FelixTron</p>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; margin-bottom: 50px;">
         
@@ -1179,6 +1177,49 @@ footer {
         </a>
     </div>
 </div>
+
+<style>
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    #ebook-page {
+        padding: 40px 2.5% !important; /* Reduz padding lateral para 2.5% (total 5%) */
+    }
+    
+    #ebook-page h1 {
+        font-size: 2.2em !important; /* Reduz tamanho do título no mobile */
+    }
+    
+    #ebook-page > div:first-of-type {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 95% !important; /* Usa 95% da largura da tela */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    #ebook-page > div:first-of-type > div {
+        width: 100% !important;
+    }
+    
+    #ebook-page > div:first-of-type > div:last-child {
+        padding: 25px !important; /* Reduz padding no mobile */
+    }
+    
+    #ebook-page > div:nth-child(4) {
+        width: 95% !important; /* Usa 95% da largura da tela */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 25px !important; /* Reduz padding no mobile */
+    }
+    
+    #ebook-page > div:last-child {
+        width: 95% !important; /* Usa 95% da largura da tela */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+</style>
 
         <!-- PÁGINA ORÇAMENTO (MODIFICADA) -->
         <div id="orcamento-page" class="page orcamento-page">

@@ -1086,10 +1086,103 @@ footer {
         </div>
 
         <!-- PÁGINA E-BOOK -->
-        <div id="ebook-page" class="page" style="display: none; padding: 80px 5%; text-align: center;">
-            <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px;">E-book</h1>
-            <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">Página em desenvolvimento...</p>
+       <!-- PÁGINA E-BOOK (SUBSTITUIR A ATUAL) -->
+<div id="ebook-page" class="page" style="display: none; padding: 80px 5%; max-width: 1200px; margin: 0 auto;">
+    <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 20px; text-align: center;">Guia Técnico de Smartphones</h1>
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+        <p style="font-size: 1.2em; opacity: 0.9; max-width: 800px; margin: 0 auto 20px;">
+            <strong>Conhecimento técnico aplicado à manutenção de celulares</strong>
+        </p>
+        <p style="opacity: 0.8;">Por Bruno Felix - FelixTron</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; margin-bottom: 50px;">
+        
+        <!-- Capa do Ebook -->
+        <div style="text-align: center;">
+            <img src="Eletrocelular 01.jpg" alt="Capa do Ebook Guia Técnico de Smartphones" 
+                 style="width: 100%; max-width: 400px; border-radius: 15px; border: 3px solid var(--ciano); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
         </div>
+        
+        <!-- Informações e Download -->
+        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid var(--ciano);">
+            <h2 style="color: var(--azul-neon); margin-bottom: 20px;">📚 Sobre este Ebook</h2>
+            
+            <p style="margin-bottom: 20px; line-height: 1.6;">
+                <strong>Material completo e didático</strong> para quem deseja compreender as bases da 
+                manutenção de smartphones. Explicações acessíveis sobre princípios da eletricidade, 
+                Lei de Ohm, componentes eletrônicos e circuitos aplicados à reparação de celulares.
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+                <h3 style="color: var(--ciano); margin-bottom: 15px;">🎯 O que você vai aprender:</h3>
+                <ul style="padding-left: 20px; opacity: 0.9;">
+                    <li style="margin-bottom: 8px;">Fundamentos da eletricidade aplicada</li>
+                    <li style="margin-bottom: 8px;">Lei de Ohm na prática</li>
+                    <li style="margin-bottom: 8px;">Componentes eletrônicos dos celulares</li>
+                    <li style="margin-bottom: 8px;">Circuitos série e paralelo</li>
+                    <li style="margin-bottom: 8px;">Energia estática e prevenção</li>
+                </ul>
+            </div>
+            
+            <!-- Botão de Download -->
+            <div style="text-align: center;">
+                <a href="guidasmart-1.pdf" download 
+                   style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, var(--azul-neon), var(--ciano)); color: white; padding: 18px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: all 0.3s; box-shadow: 0 5px 20px rgba(0, 116, 217, 0.4);">
+                    📥 Baixar Ebook Gratuito
+                </a>
+                <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">PDF - 1.37MB</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo do Capítulo 1 -->
+    <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 15px; margin-top: 40px;">
+        <h2 style="color: var(--ciano); text-align: center; margin-bottom: 30px;">📖 Capítulo 1 - Fundamentos da Eletricidade</h2>
+        
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px;">⚡ O que é a eletricidade?</h3>
+            <p>
+                A eletricidade é uma forma de energia resultante da movimentação de cargas elétricas, geralmente elétrons. 
+                É o movimento ordenado de elétrons através de um material condutor, essencial para o funcionamento de todos 
+                os circuitos internos dos celulares.
+            </p>
+        </div>
+        
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px;">🔬 Estrutura do Átomo</h3>
+            <p>
+                Compreender a estrutura atômica é fundamental para entender como a corrente elétrica flui através 
+                dos materiais condutores presentes nas placas dos smartphones.
+            </p>
+        </div>
+        
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: var(--azul-neon); margin-bottom: 15px;">📊 Lei de Ohm</h3>
+            <p>
+                A relação fundamental entre tensão, corrente e resistência elétrica - essencial para diagnósticos 
+                precisos em manutenção de placas.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-style: italic; opacity: 0.8;">
+                "Conteúdo completo disponível para download gratuito"
+            </p>
+        </div>
+    </div>
+
+    <!-- Seção de Contato Genérica -->
+    <div style="text-align: center; margin-top: 50px;">
+        <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">
+            Tem dúvidas técnicas ou sugestões? Fique à vontade para entrar em contato!
+        </p>
+        <a href="#contato" class="btn-destaque nav-link" data-page="contato" style="display: inline-block; width: auto; padding: 15px 30px;">
+            📞 Entrar em Contato
+        </a>
+    </div>
+</div>
 
         <!-- PÁGINA ORÇAMENTO (MODIFICADA) -->
         <div id="orcamento-page" class="page orcamento-page">

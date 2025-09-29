@@ -801,7 +801,7 @@ footer {
     word-wrap: break-word !important;
 }
 
-/* ===== CORREÇÕES ESPECÍFICAS PARA A PÁGINA DO E-BOOK ===== */
+/* ===== PÁGINA DO E-BOOK - CORREÇÕES ESPECÍFICAS ===== */
 #ebook-page {
     padding: 40px 5% !important;
     max-width: 1200px !important;
@@ -809,47 +809,51 @@ footer {
     width: 100% !important;
 }
 
-#ebook-page .ebook-content {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 40px !important;
+/* Container principal do ebook - LAYOUT DESKTOP */
+.ebook-main-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 50px !important;
+    align-items: start !important;
+    margin-bottom: 50px !important;
     width: 100% !important;
-    max-width: 100% !important;
 }
 
-#ebook-page .ebook-cover {
+/* Capa do ebook */
+.ebook-cover {
     text-align: center !important;
     width: 100% !important;
 }
 
-#ebook-page .ebook-cover img {
-    width: 95% !important;
+.ebook-cover img {
+    width: 100% !important;
     max-width: 400px !important;
     border-radius: 15px !important;
     border: 3px solid var(--ciano) !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
 }
 
-#ebook-page .ebook-info {
+/* Informações do ebook */
+.ebook-info {
     background: rgba(255,255,255,0.05) !important;
     padding: 30px !important;
     border-radius: 15px !important;
     border-left: 4px solid var(--ciano) !important;
-    width: 95% !important;
-    margin: 0 auto !important;
+    width: 100% !important;
 }
 
-#ebook-page .ebook-download {
+.ebook-download {
     text-align: center !important;
     margin-top: 20px !important;
 }
 
-#ebook-page .chapter-content {
+/* Conteúdo do capítulo */
+.ebook-chapter {
     background: rgba(255,255,255,0.03) !important;
     padding: 30px !important;
     border-radius: 15px !important;
     margin-top: 30px !important;
-    width: 95% !important;
+    width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
 }
@@ -886,7 +890,7 @@ footer {
     transform: scale(1.05);
 }
 
-/* ===== RESPONSIVIDADE PARA OS CARDS COM FONTES MAIORES ===== */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
     .home-section {
         flex-direction: column;
@@ -938,11 +942,11 @@ footer {
     }
     
     .servico-card h3 {
-        font-size: 1.8em; /* Redução leve para tablet */
+        font-size: 1.8em;
     }
     
     .servico-card p {
-        font-size: 1.2em; /* Redução leve para tablet */
+        font-size: 1.2em;
     }
 }
 
@@ -1016,24 +1020,37 @@ footer {
         box-sizing: border-box;
     }
     
-    /* CORREÇÃO ESPECÍFICA PARA E-BOOK NO MOBILE */
-    #ebook-page .ebook-content {
+    /* ===== CORREÇÃO ESPECÍFICA DO E-BOOK PARA MOBILE ===== */
+    .ebook-main-container {
+        display: flex !important;
+        flex-direction: column !important;
         gap: 30px !important;
-        padding: 0 10px !important;
+        margin-bottom: 30px !important;
     }
     
-    #ebook-page .ebook-cover img {
+    .ebook-cover {
+        order: 1 !important;
         width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .ebook-cover img {
+        width: 95% !important;
         max-width: 350px !important;
+        margin: 0 auto !important;
     }
     
-    #ebook-page .ebook-info {
-        width: 100% !important;
+    .ebook-info {
+        order: 2 !important;
+        width: 95% !important;
+        margin: 0 auto !important;
         padding: 25px 20px !important;
     }
     
-    #ebook-page .chapter-content {
-        width: 100% !important;
+    .ebook-chapter {
+        order: 3 !important;
+        width: 95% !important;
+        margin: 0 auto !important;
         padding: 25px 20px !important;
     }
     
@@ -1049,15 +1066,15 @@ footer {
     
     /* Ajustes específicos para mobile */
     .servico-card h3 {
-        font-size: 1.7em; /* Mantém bom tamanho no mobile */
+        font-size: 1.7em;
     }
     
     .servico-card p {
-        font-size: 1.15em; /* Mantém legibilidade no mobile */
+        font-size: 1.15em;
     }
     
     .servico-imagem {
-        height: 200px; /* Redução leve no mobile */
+        height: 200px;
     }
 }
 
@@ -1131,7 +1148,7 @@ footer {
     }
 
     .servico-card h3 {
-        font-size: 1.6em !important; /* Mantém tamanho legível */
+        font-size: 1.6em !important;
     }
     
     .blog-card h3 {
@@ -1139,7 +1156,7 @@ footer {
     }
 
     .servico-card p {
-        font-size: 1.1em !important; /* Mantém legibilidade */
+        font-size: 1.1em !important;
     }
     
     .blog-card p {
@@ -1150,18 +1167,20 @@ footer {
         font-size: 1.05em !important;
     }
     
-    /* CORREÇÕES ESPECÍFICAS PARA E-BOOK NO MOBILE PEQUENO */
+    /* ===== CORREÇÕES ESPECÍFICAS DO E-BOOK PARA MOBILE PEQUENO ===== */
     #ebook-page {
         padding: 20px 10px !important;
     }
     
-    #ebook-page .ebook-cover img {
+    .ebook-cover img {
         max-width: 300px !important;
+        width: 100% !important;
     }
     
-    #ebook-page .ebook-info,
-    #ebook-page .chapter-content {
+    .ebook-info,
+    .ebook-chapter {
         padding: 20px 15px !important;
+        width: 100% !important;
     }
     
     #ebook-page h1 {
@@ -1170,6 +1189,10 @@ footer {
     
     #ebook-page h2 {
         font-size: 1.3em !important;
+    }
+    
+    .ebook-main-container {
+        gap: 25px !important;
     }
 }
 </style>

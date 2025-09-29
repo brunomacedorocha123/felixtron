@@ -801,6 +801,91 @@ footer {
     word-wrap: break-word !important;
 }
 
+/* ===== CORREÇÕES ESPECÍFICAS PARA A PÁGINA DO E-BOOK ===== */
+#ebook-page {
+    padding: 40px 5% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+#ebook-page .ebook-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+#ebook-page .ebook-cover {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+#ebook-page .ebook-cover img {
+    width: 95% !important;
+    max-width: 400px !important;
+    border-radius: 15px !important;
+    border: 3px solid var(--ciano) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+
+#ebook-page .ebook-info {
+    background: rgba(255,255,255,0.05) !important;
+    padding: 30px !important;
+    border-radius: 15px !important;
+    border-left: 4px solid var(--ciano) !important;
+    width: 95% !important;
+    margin: 0 auto !important;
+}
+
+#ebook-page .ebook-download {
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+
+#ebook-page .chapter-content {
+    background: rgba(255,255,255,0.03) !important;
+    padding: 30px !important;
+    border-radius: 15px !important;
+    margin-top: 30px !important;
+    width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Centralizar H2 na página do ebook */
+#ebook-page h2 {
+    text-align: center !important;
+    color: var(--azul-neon) !important;
+    margin-bottom: 30px !important;
+    font-size: 1.8em !important;
+}
+
+.servico-imagem {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servico-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--ciano);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.servico-item:hover .servico-imagem img {
+    transform: scale(1.05);
+}
+
 /* ===== RESPONSIVIDADE PARA OS CARDS COM FONTES MAIORES ===== */
 @media (max-width: 1024px) {
     .home-section {
@@ -931,6 +1016,37 @@ footer {
         box-sizing: border-box;
     }
     
+    /* CORREÇÃO ESPECÍFICA PARA E-BOOK NO MOBILE */
+    #ebook-page .ebook-content {
+        gap: 30px !important;
+        padding: 0 10px !important;
+    }
+    
+    #ebook-page .ebook-cover img {
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+    
+    #ebook-page .ebook-info {
+        width: 100% !important;
+        padding: 25px 20px !important;
+    }
+    
+    #ebook-page .chapter-content {
+        width: 100% !important;
+        padding: 25px 20px !important;
+    }
+    
+    #ebook-page h1 {
+        font-size: 2.2em !important;
+        padding: 0 15px !important;
+    }
+    
+    #ebook-page h2 {
+        font-size: 1.5em !important;
+        padding: 0 15px !important;
+    }
+    
     /* Ajustes específicos para mobile */
     .servico-card h3 {
         font-size: 1.7em; /* Mantém bom tamanho no mobile */
@@ -1033,38 +1149,28 @@ footer {
     .servico-card li {
         font-size: 1.05em !important;
     }
-}
-
-/* Centralizar H2 na página do ebook */
-#ebook-page h2 {
-    text-align: center !important;
-    color: var(--azul-neon) !important;
-    margin-bottom: 30px !important;
-    font-size: 1.8em !important;
-}
-
-.servico-imagem {
-    width: 100%;
-    height: 200px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.servico-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 2px solid var(--ciano);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.servico-item:hover .servico-imagem img {
-    transform: scale(1.05);
+    
+    /* CORREÇÕES ESPECÍFICAS PARA E-BOOK NO MOBILE PEQUENO */
+    #ebook-page {
+        padding: 20px 10px !important;
+    }
+    
+    #ebook-page .ebook-cover img {
+        max-width: 300px !important;
+    }
+    
+    #ebook-page .ebook-info,
+    #ebook-page .chapter-content {
+        padding: 20px 15px !important;
+    }
+    
+    #ebook-page h1 {
+        font-size: 1.8em !important;
+    }
+    
+    #ebook-page h2 {
+        font-size: 1.3em !important;
+    }
 }
 </style>
   
@@ -1174,7 +1280,7 @@ footer {
       <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 20px; text-align: center;">Eletrônica para Smartphones</h1>
       <h2 style="text-align: center; color: var(--azul-neon); margin-bottom: 40px;">Guia didático da teoria à prática</h2>
       
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; margin-bottom: 50px;">
+      <div class="ebook-content"></div>
         
         <!-- Capa do Ebook -->
         <div style="text-align: center;">

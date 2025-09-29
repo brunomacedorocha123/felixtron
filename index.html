@@ -545,11 +545,11 @@ header {
     font-size: 1.1em;
 }
 
-/* ===== CARDS DE SERVIÇOS COM FONTES 30% MAIORES ===== */
+/* ===== CARDS DE SERVIÇOS ===== */
 .servico-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    padding: 35px 30px; /* Aumentei o padding em 40% */
+    padding: 35px 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
     backdrop-filter: blur(10px);
@@ -564,10 +564,10 @@ header {
 
 .servico-imagem {
     width: 100%;
-    height: 220px; /* Aumentei a altura em 10% */
+    height: 220px;
     background: rgba(255,255,255,0.1);
     border-radius: 10px;
-    margin-bottom: 25px; /* Aumentei a margem */
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -584,48 +584,48 @@ header {
 
 .servico-card h3 {
     color: var(--azul-neon);
-    margin-bottom: 20px; /* Aumentei a margem */
-    font-size: 1.95em; /* Aumento de 30% (1.5em → 1.95em) */
+    margin-bottom: 20px;
+    font-size: 1.95em;
     font-weight: 600;
     line-height: 1.3;
 }
 
 .servico-card p {
     color: var(--branco);
-    margin-bottom: 25px; /* Aumentei a margem */
+    margin-bottom: 25px;
     opacity: 0.9;
-    line-height: 1.7; /* Melhorei o espaçamento entre linhas */
-    font-size: 1.3em; /* Aumento de 30% (1em → 1.3em) */
+    line-height: 1.7;
+    font-size: 1.3em;
 }
 
 .servico-card ul {
     color: var(--branco);
     opacity: 0.8;
-    padding-left: 25px; /* Aumentei o padding */
-    margin-bottom: 25px; /* Aumentei a margem */
+    padding-left: 25px;
+    margin-bottom: 25px;
 }
 
 .servico-card li {
-    margin-bottom: 12px; /* Aumentei o espaçamento entre itens */
-    font-size: 1.15em; /* Aumento de ~15% */
+    margin-bottom: 12px;
+    font-size: 1.15em;
     line-height: 1.4;
 }
 
 .servicos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Aumentei o min-width */
-    gap: 35px; /* Aumentei o gap */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
     margin-top: 40px;
     width: 100%;
     max-width: 100%;
     justify-items: center;
 }
 
-/* BLOG - ESTILOS CORRIGIDOS PARA CENTRALIZAÇÃO */
+/* BLOG */
 .blog-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Aumentei o min-width */
-    gap: 35px; /* Aumentei o gap */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
     margin-top: 40px;
     width: 100%;
     max-width: 100%;
@@ -635,7 +635,7 @@ header {
 .blog-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    padding: 35px 30px; /* Aumentei o padding */
+    padding: 35px 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
     backdrop-filter: blur(10px);
@@ -653,9 +653,9 @@ header {
 
 .blog-imagem {
     width: 100%;
-    height: 220px; /* Aumentei a altura */
+    height: 220px;
     border-radius: 10px;
-    margin-bottom: 25px; /* Aumentei a margem */
+    margin-bottom: 25px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -670,25 +670,25 @@ header {
 
 .blog-card h3 {
     color: var(--azul-neon);
-    margin-bottom: 20px; /* Aumentei a margem */
-    font-size: 1.8em; /* Aumento de ~20% */
+    margin-bottom: 20px;
+    font-size: 1.8em;
     line-height: 1.3;
 }
 
 .blog-card p {
     color: var(--branco);
-    margin-bottom: 25px; /* Aumentei a margem */
+    margin-bottom: 25px;
     opacity: 0.9;
-    line-height: 1.7; /* Melhorei o espaçamento */
-    font-size: 1.15em; /* Aumento de 15% */
+    line-height: 1.7;
+    font-size: 1.15em;
 }
 
 .blog-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px; /* Aumentei a margem */
-    font-size: 1em; /* Aumento leve */
+    margin-top: 25px;
+    font-size: 1em;
 }
 
 .blog-categoria {
@@ -801,71 +801,6 @@ footer {
     word-wrap: break-word !important;
 }
 
-/* ===== PÁGINA DO E-BOOK - CORREÇÕES ESPECÍFICAS ===== */
-#ebook-page {
-    padding: 40px 5% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-}
-
-/* Container principal do ebook - LAYOUT DESKTOP */
-.ebook-main-container {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 50px !important;
-    align-items: start !important;
-    margin-bottom: 50px !important;
-    width: 100% !important;
-}
-
-/* Capa do ebook */
-.ebook-cover {
-    text-align: center !important;
-    width: 100% !important;
-}
-
-.ebook-cover img {
-    width: 100% !important;
-    max-width: 400px !important;
-    border-radius: 15px !important;
-    border: 3px solid var(--ciano) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
-}
-
-/* Informações do ebook */
-.ebook-info {
-    background: rgba(255,255,255,0.05) !important;
-    padding: 30px !important;
-    border-radius: 15px !important;
-    border-left: 4px solid var(--ciano) !important;
-    width: 100% !important;
-}
-
-.ebook-download {
-    text-align: center !important;
-    margin-top: 20px !important;
-}
-
-/* Conteúdo do capítulo */
-.ebook-chapter {
-    background: rgba(255,255,255,0.03) !important;
-    padding: 30px !important;
-    border-radius: 15px !important;
-    margin-top: 30px !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* Centralizar H2 na página do ebook */
-#ebook-page h2 {
-    text-align: center !important;
-    color: var(--azul-neon) !important;
-    margin-bottom: 30px !important;
-    font-size: 1.8em !important;
-}
-
 .servico-imagem {
     width: 100%;
     height: 200px;
@@ -936,7 +871,6 @@ footer {
         flex-direction: column;
     }
     
-    /* Ajustes para tablets */
     .servico-card {
         padding: 30px 25px;
     }
@@ -1020,51 +954,6 @@ footer {
         box-sizing: border-box;
     }
     
-    /* ===== CORREÇÃO ESPECÍFICA DO E-BOOK PARA MOBILE ===== */
-    .ebook-main-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-        margin-bottom: 30px !important;
-    }
-    
-    .ebook-cover {
-        order: 1 !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .ebook-cover img {
-        width: 95% !important;
-        max-width: 350px !important;
-        margin: 0 auto !important;
-    }
-    
-    .ebook-info {
-        order: 2 !important;
-        width: 95% !important;
-        margin: 0 auto !important;
-        padding: 25px 20px !important;
-    }
-    
-    .ebook-chapter {
-        order: 3 !important;
-        width: 95% !important;
-        margin: 0 auto !important;
-        padding: 25px 20px !important;
-    }
-    
-    #ebook-page h1 {
-        font-size: 2.2em !important;
-        padding: 0 15px !important;
-    }
-    
-    #ebook-page h2 {
-        font-size: 1.5em !important;
-        padding: 0 15px !important;
-    }
-    
-    /* Ajustes específicos para mobile */
     .servico-card h3 {
         font-size: 1.7em;
     }
@@ -1113,26 +1002,17 @@ footer {
         max-width: none;
     }
 
-    body, html, #servicos-page, .servicos-container, .blog-container {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+    .servicos-container,
+    .blog-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
     }
 
-    .servico-card {
-        display: block !important;
-        width: 95% !important;
-        max-width: 400px !important;
-        margin: 0 auto !important;
-        padding: 25px 20px !important;
-        box-sizing: border-box !important;
-    }
-
+    .servico-card,
     .blog-card {
-        display: block !important;
-        width: 95% !important;
-        max-width: 400px !important;
+        width: 100% !important;
+        max-width: 100% !important;
         margin: 0 auto !important;
         padding: 25px 20px !important;
         box-sizing: border-box !important;
@@ -1140,7 +1020,6 @@ footer {
 
     .servico-imagem {
         height: 180px !important;
-        font-size: 2.5em !important;
     }
     
     .blog-imagem {
@@ -1161,38 +1040,6 @@ footer {
     
     .blog-card p {
         font-size: 1.1em !important;
-    }
-    
-    .servico-card li {
-        font-size: 1.05em !important;
-    }
-    
-    /* ===== CORREÇÕES ESPECÍFICAS DO E-BOOK PARA MOBILE PEQUENO ===== */
-    #ebook-page {
-        padding: 20px 10px !important;
-    }
-    
-    .ebook-cover img {
-        max-width: 300px !important;
-        width: 100% !important;
-    }
-    
-    .ebook-info,
-    .ebook-chapter {
-        padding: 20px 15px !important;
-        width: 100% !important;
-    }
-    
-    #ebook-page h1 {
-        font-size: 1.8em !important;
-    }
-    
-    #ebook-page h2 {
-        font-size: 1.3em !important;
-    }
-    
-    .ebook-main-container {
-        gap: 25px !important;
     }
 }
 </style>
@@ -1303,26 +1150,26 @@ footer {
       <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 20px; text-align: center;">Eletrônica para Smartphones</h1>
       <h2 style="text-align: center; color: var(--azul-neon); margin-bottom: 40px;">Guia didático da teoria à prática</h2>
       
-      <div class="ebook-content"></div>
+      <div style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
         
         <!-- Capa do Ebook -->
-        <div style="text-align: center;">
+        <div style="text-align: center; width: 100%;">
           <img src="capaebook1.jpg" alt="Capa do Ebook Guia Técnico de Smartphones"
-             style="width: 100%; max-width: 400px; border-radius: 15px; border: 3px solid var(--ciano); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+             style="width: 95%; max-width: 400px; border-radius: 15px; border: 3px solid var(--ciano); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
         </div>
         
         <!-- Informações e Download -->
-        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid var(--ciano);">
-          <h2 style="color: var(--azul-neon); margin-bottom: 20px;">Sobre este Ebook</h2>
+        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid var(--ciano); width: 95%; max-width: 600px;">
+          <h2 style="color: var(--azul-neon); margin-bottom: 20px; text-align: center;">Sobre este Ebook</h2>
           
-          <p style="margin-bottom: 20px; line-height: 1.6;">
+          <p style="margin-bottom: 20px; line-height: 1.6; text-align: center;">
             <strong>Material completo e didático</strong> para quem deseja compreender as bases da
             manutenção de smartphones. Explicações acessíveis sobre princípios da eletricidade,
             Lei de Ohm, componentes eletrônicos e circuitos aplicados à reparação de celulares.
           </p>
           
           <div style="margin-bottom: 25px;">
-            <h3 style="color: var(--ciano); margin-bottom: 15px;">O que você vai aprender:</h3>
+            <h3 style="color: var(--ciano); margin-bottom: 15px; text-align: center;">O que você vai aprender:</h3>
             <ul style="padding-left: 20px; opacity: 0.9;">
               <li style="margin-bottom: 8px;">Fundamentos da eletricidade aplicada</li>
               <li style="margin-bottom: 8px;">Lei de Ohm na prática</li>
@@ -1338,18 +1185,18 @@ footer {
               style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, var(--azul-neon), var(--ciano)); color: white; padding: 18px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: all 0.3s; box-shadow: 0 5px 20px rgba(0, 116, 217, 0.4);">
               Baixar Ebook Gratuito
             </a>
-            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">PDF - 2.28MB</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7; text-align: center;">PDF - 2.28MB</p>
           </div>
         </div>
       </div>
 
       <!-- Conteúdo do Capítulo 1 -->
-      <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 15px; margin-top: 40px;">
+      <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px; margin-top: 40px; width: 95%; max-width: 800px; margin-left: auto; margin-right: auto;">
         <h2 style="color: var(--ciano); text-align: center; margin-bottom: 30px;">Capítulo 1 - Fundamentos da Eletricidade</h2>
         
         <div style="margin-bottom: 30px;">
-          <h3 style="color: var(--azul-neon); margin-bottom: 15px;">⚡ O que é a eletricidade?</h3>
-          <p>
+          <h3 style="color: var(--azul-neon); margin-bottom: 15px; text-align: center;">⚡ O que é a eletricidade?</h3>
+          <p style="text-align: center;">
             A eletricidade é uma forma de energia resultante da movimentação de cargas elétricas, geralmente elétrons.
             É o movimento ordenado de elétrons através de um material condutor, essencial para o funcionamento de todos
             os circuitos internos dos celulares.
@@ -1357,23 +1204,23 @@ footer {
         </div>
         
         <div style="margin-bottom: 30px;">
-          <h3 style="color: var(--azul-neon); margin-bottom: 15px;">Estrutura do Átomo</h3>
-          <p>
+          <h3 style="color: var(--azul-neon); margin-bottom: 15px; text-align: center;">Estrutura do Átomo</h3>
+          <p style="text-align: center;">
             Compreender a estrutura atômica é fundamental para entender como a corrente elétrica flui através
             dos materiais condutores presentes nas placas dos smartphones.
           </p>
         </div>
         
         <div style="margin-bottom: 30px;">
-          <h3 style="color: var(--azul-neon); margin-bottom: 15px;">Lei de Ohm</h3>
-          <p>
+          <h3 style="color: var(--azul-neon); margin-bottom: 15px; text-align: center;">Lei de Ohm</h3>
+          <p style="text-align: center;">
             A relação fundamental entre tensão, corrente e resistência elétrica - essencial para diagnósticos
             precisos em manutenção de placas.
           </p>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-          <p style="font-style: italic; opacity: 0.8;">
+          <p style="font-style: italic; opacity: 0.8; text-align: center;">
             "Conteúdo completo disponível para download gratuito"
           </p>
         </div>
@@ -1901,8 +1748,6 @@ footer {
       // Mostrar página home por padrão
       showPage('home');
     });
-
-
   </script>
   
 </body>

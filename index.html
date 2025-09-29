@@ -1042,6 +1042,30 @@ footer {
     margin-bottom: 30px !important;
     font-size: 1.8em !important;
 }
+
+.servico-imagem {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servico-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--ciano);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.servico-item:hover .servico-imagem img {
+    transform: scale(1.05);
+}
 </style>
   
   <!-- Ícones do Font Awesome para o WhatsApp -->
@@ -1053,7 +1077,6 @@ footer {
     <div class="logo-container">
       <img src="logofelixtron.png" alt="FelixTron - Manutenção de Celulares" class="header-logo">
     </div>
-
 
     <!-- Menu Desktop -->
     <nav class="menu-desktop">
@@ -1068,7 +1091,6 @@ footer {
       </ul>
     </nav>
 
-
     <!-- Menu Mobile -->
     <button class="hamburger" aria-label="Abrir menu">
       <span></span>
@@ -1076,7 +1098,6 @@ footer {
       <span></span>
     </button>
   </header>
-
 
   <!-- Menu Mobile -->
   <div class="menu-mobile">
@@ -1091,7 +1112,6 @@ footer {
       <li><a href="#ebook" class="nav-link" data-page="ebook">E-book</a></li>
     </ul>
   </div>
-
 
   <div class="conteudo-principal">
     <!-- PÁGINA HOME -->
@@ -1108,12 +1128,10 @@ footer {
           <a href="#orcamento" class="btn-destaque nav-link" data-page="orcamento">Solicite um Orçamento</a>
         </div>
 
-
         <div class="home-image">
-          <img src="circuito.jpeg" alt="Técnico realizando manutenção em celular" style="max-width: 600px; width: 100%;">
+          <img src="smartphone1.jpg" alt="Técnico realizando manutenção em celular" style="max-width: 600px; width: 100%;">
         </div>
       </section>
-
 
       <!-- Seção Serviços na Home -->
       <section class="servicos-home">
@@ -1125,19 +1143,25 @@ footer {
         
         <div class="servicos-grid">
           <div class="servico-item">
-            <div class="servico-icon"></div>
+            <div class="servico-imagem">
+              <img src="trocatela01.jpeg" alt="Troca de Tela">
+            </div>
             <h3>Troca de Tela</h3>
             <p>Reparo especializado para telas quebradas ou com problemas de toque. Utilizamos peças de alta qualidade com garantia.</p>
           </div>
           
           <div class="servico-item">
-            <div class="servico-icon"></div>
+            <div class="servico-imagem">
+              <img src="trocabateria1.jpg" alt="Troca de Bateria">
+            </div>
             <h3>Troca de Bateria</h3>
             <p>Substituição de baterias com baixa performance ou problemas de carga. Garantia de durabilidade e performance.</p>
           </div>
           
           <div class="servico-item">
-            <div class="servico-icon"></div>
+            <div class="servico-imagem">
+              <img src="reparoplaca1.jpeg" alt="Reparo de Placa">
+            </div>
             <h3>Reparo de Placa</h3>
             <p>Diagnóstico e reparo de problemas complexos na placa-mãe do dispositivo. Técnicos especializados em microsolda.</p>
           </div>
@@ -1145,145 +1169,99 @@ footer {
       </section>
     </div>
 
-
     <!-- PÁGINA E-BOOK -->
-   <div id="ebook-page" class="page" style="display: none; padding: 80px 5%; max-width: 1200px; margin: 0 auto;">
-  <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 20px; text-align: center;">Eletrônica para Smartphones</h1><h2>Guia didático da teoria à prática</h2>
-  
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; margin-bottom: 50px;">
-    
-    <!-- Capa do Ebook -->
-    <div style="text-align: center;">
-      <img src="capaebook1.jpg" alt="Capa do Ebook Guia Técnico de Smartphones"
-         style="width: 100%; max-width: 400px; border-radius: 15px; border: 3px solid var(--ciano); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-    </div>
-    
-    <!-- Informações e Download -->
-    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid var(--ciano);">
-      <h2 style="color: var(--azul-neon); margin-bottom: 20px;"> Sobre este Ebook</h2>
+    <div id="ebook-page" class="page" style="display: none; padding: 80px 5%; max-width: 1200px; margin: 0 auto;">
+      <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 20px; text-align: center;">Eletrônica para Smartphones</h1>
+      <h2 style="text-align: center; color: var(--azul-neon); margin-bottom: 40px;">Guia didático da teoria à prática</h2>
       
-      <p style="margin-bottom: 20px; line-height: 1.6;">
-        <strong>Material completo e didático</strong> para quem deseja compreender as bases da
-        manutenção de smartphones. Explicações acessíveis sobre princípios da eletricidade,
-        Lei de Ohm, componentes eletrônicos e circuitos aplicados à reparação de celulares.
-      </p>
-      
-      <div style="margin-bottom: 25px;">
-        <h3 style="color: var(--ciano); margin-bottom: 15px;"> O que você vai aprender:</h3>
-        <ul style="padding-left: 20px; opacity: 0.9;">
-          <li style="margin-bottom: 8px;">Fundamentos da eletricidade aplicada</li>
-          <li style="margin-bottom: 8px;">Lei de Ohm na prática</li>
-          <li style="margin-bottom: 8px;">Componentes eletrônicos dos celulares</li>
-          <li style="margin-bottom: 8px;">Circuitos série e paralelo</li>
-          <li style="margin-bottom: 8px;">Energia estática e prevenção</li>
-        </ul>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; margin-bottom: 50px;">
+        
+        <!-- Capa do Ebook -->
+        <div style="text-align: center;">
+          <img src="capaebook1.jpg" alt="Capa do Ebook Guia Técnico de Smartphones"
+             style="width: 100%; max-width: 400px; border-radius: 15px; border: 3px solid var(--ciano); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        </div>
+        
+        <!-- Informações e Download -->
+        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid var(--ciano);">
+          <h2 style="color: var(--azul-neon); margin-bottom: 20px;">Sobre este Ebook</h2>
+          
+          <p style="margin-bottom: 20px; line-height: 1.6;">
+            <strong>Material completo e didático</strong> para quem deseja compreender as bases da
+            manutenção de smartphones. Explicações acessíveis sobre princípios da eletricidade,
+            Lei de Ohm, componentes eletrônicos e circuitos aplicados à reparação de celulares.
+          </p>
+          
+          <div style="margin-bottom: 25px;">
+            <h3 style="color: var(--ciano); margin-bottom: 15px;">O que você vai aprender:</h3>
+            <ul style="padding-left: 20px; opacity: 0.9;">
+              <li style="margin-bottom: 8px;">Fundamentos da eletricidade aplicada</li>
+              <li style="margin-bottom: 8px;">Lei de Ohm na prática</li>
+              <li style="margin-bottom: 8px;">Componentes eletrônicos dos celulares</li>
+              <li style="margin-bottom: 8px;">Circuitos série e paralelo</li>
+              <li style="margin-bottom: 8px;">Energia estática e prevenção</li>
+            </ul>
+          </div>
+          
+          <!-- Botão de Download -->
+          <div style="text-align: center;">
+            <a href="guiasmart-1.pdf" download
+              style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, var(--azul-neon), var(--ciano)); color: white; padding: 18px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: all 0.3s; box-shadow: 0 5px 20px rgba(0, 116, 217, 0.4);">
+              Baixar Ebook Gratuito
+            </a>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">PDF - 2.28MB</p>
+          </div>
+        </div>
       </div>
-      
-      <!-- Botão de Download -->
-      <div style="text-align: center;">
-        <a href="guiasmart-1.pdf" download
-          style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, var(--azul-neon), var(--ciano)); color: white; padding: 18px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: all 0.3s; box-shadow: 0 5px 20px rgba(0, 116, 217, 0.4);">
-           Baixar Ebook Gratuito
+
+      <!-- Conteúdo do Capítulo 1 -->
+      <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 15px; margin-top: 40px;">
+        <h2 style="color: var(--ciano); text-align: center; margin-bottom: 30px;">Capítulo 1 - Fundamentos da Eletricidade</h2>
+        
+        <div style="margin-bottom: 30px;">
+          <h3 style="color: var(--azul-neon); margin-bottom: 15px;">⚡ O que é a eletricidade?</h3>
+          <p>
+            A eletricidade é uma forma de energia resultante da movimentação de cargas elétricas, geralmente elétrons.
+            É o movimento ordenado de elétrons através de um material condutor, essencial para o funcionamento de todos
+            os circuitos internos dos celulares.
+          </p>
+        </div>
+        
+        <div style="margin-bottom: 30px;">
+          <h3 style="color: var(--azul-neon); margin-bottom: 15px;">Estrutura do Átomo</h3>
+          <p>
+            Compreender a estrutura atômica é fundamental para entender como a corrente elétrica flui através
+            dos materiais condutores presentes nas placas dos smartphones.
+          </p>
+        </div>
+        
+        <div style="margin-bottom: 30px;">
+          <h3 style="color: var(--azul-neon); margin-bottom: 15px;">Lei de Ohm</h3>
+          <p>
+            A relação fundamental entre tensão, corrente e resistência elétrica - essencial para diagnósticos
+            precisos em manutenção de placas.
+          </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <p style="font-style: italic; opacity: 0.8;">
+            "Conteúdo completo disponível para download gratuito"
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção de Contato Genérica -->
+      <div style="text-align: center; margin-top: 50px;">
+        <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">
+          Tem dúvidas técnicas ou sugestões? Fique à vontade para entrar em contato!
+        </p>
+        <a href="#contato" class="btn-destaque nav-link" data-page="contato" style="display: inline-block; width: auto; padding: 15px 30px;">
+          Entrar em Contato
         </a>
-        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">PDF - 2.28MB</p>
       </div>
     </div>
-  </div>
 
-
-  <!-- Conteúdo do Capítulo 1 -->
-  <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 15px; margin-top: 40px;">
-    <h2 style="color: var(--ciano); text-align: center; margin-bottom: 30px;"> Capítulo 1 - Fundamentos da Eletricidade</h2>
-    
-    <div style="margin-bottom: 30px;">
-      <h3 style="color: var(--azul-neon); margin-bottom: 15px;">⚡ O que é a eletricidade?</h3>
-      <p>
-        A eletricidade é uma forma de energia resultante da movimentação de cargas elétricas, geralmente elétrons.
-        É o movimento ordenado de elétrons através de um material condutor, essencial para o funcionamento de todos
-        os circuitos internos dos celulares.
-      </p>
-    </div>
-    
-    <div style="margin-bottom: 30px;">
-      <h3 style="color: var(--azul-neon); margin-bottom: 15px;"> Estrutura do Átomo</h3>
-      <p>
-        Compreender a estrutura atômica é fundamental para entender como a corrente elétrica flui através
-        dos materiais condutores presentes nas placas dos smartphones.
-      </p>
-    </div>
-    
-    <div style="margin-bottom: 30px;">
-      <h3 style="color: var(--azul-neon); margin-bottom: 15px;"> Lei de Ohm</h3>
-      <p>
-        A relação fundamental entre tensão, corrente e resistência elétrica - essencial para diagnósticos
-        precisos em manutenção de placas.
-      </p>
-    </div>
-
-
-    <div style="text-align: center; margin-top: 40px;">
-      <p style="font-style: italic; opacity: 0.8;">
-        "Conteúdo completo disponível para download gratuito"
-      </p>
-    </div>
-  </div>
-
-
-  <!-- Seção de Contato Genérica -->
-  <div style="text-align: center; margin-top: 50px;">
-    <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">
-      Tem dúvidas técnicas ou sugestões? Fique à vontade para entrar em contato!
-    </p>
-    <a href="#contato" class="btn-destaque nav-link" data-page="contato" style="display: inline-block; width: auto; padding: 15px 30px;">
-       Entrar em Contato
-    </a>
-  </div>
-</div>
-
-
-<style>
-/* Media queries para responsividade */
-@media (max-width: 768px) {
-  #ebook-page {
-    padding: 40px 2.5% !important; /* Reduz padding lateral para 2.5% (total 5%) */
-  }
-  
-  #ebook-page h1 {
-    font-size: 2.2em !important; /* Reduz tamanho do título no mobile */
-  }
-  
-  #ebook-page > div:first-of-type {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 30px !important;
-    width: 95% !important; /* Usa 95% da largura da tela */
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  
-  #ebook-page > div:first-of-type > div {
-    width: 100% !important;
-  }
-  #ebook-page > div:first-of-type > div:last-child {
-  padding: 25px !important; /* Reduz padding no mobile */
-}
-  #ebook-page > div:nth-child(4) {
-    width: 95% !important; /* Usa 95% da largura da tela */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 25px !important; /* Reduz padding no mobile */
-  }
-  
-  #ebook-page > div:last-child {
-    width: 95% !important; /* Usa 95% da largura da tela */
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-</style>
-
-
-    <!-- PÁGINA ORÇAMENTO (MODIFICADA) -->
+    <!-- PÁGINA ORÇAMENTO -->
     <div id="orcamento-page" class="page orcamento-page">
       <h1>Solicite um Orçamento</h1>
       
@@ -1291,7 +1269,6 @@ footer {
       <div id="mensagemStatus" class="mensagem-status"></div>
       
       <div class="form-orcamento">
-        <!-- ENDPOINT DO FORMSPREE INSERIDO AQUI -->
         <form id="formOrcamento" action="https://formspree.io/f/movkqngb" method="POST">
           <div class="form-group">
             <label for="nome">Nome Completo:</label>
@@ -1337,8 +1314,7 @@ footer {
       </div>
     </div>
 
-
-    <!-- PÁGINA CONTATO (MODIFICADA COM WHATSAPP) -->
+    <!-- PÁGINA CONTATO -->
     <div id="contato-page" class="page" style="display: none; padding: 80px 5%; max-width: 1000px; margin: 0 auto;">
       <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Entre em Contato</h1>
       
@@ -1346,7 +1322,6 @@ footer {
       <div id="mensagemStatusContato" class="mensagem-status"></div>
       
       <div class="form-orcamento">
-        <!-- ENDPOINT DO FORMSPREE INSERIDO AQUI -->
         <form id="formContato" action="https://formspree.io/f/movkqngb" method="POST">
           <div class="form-group">
             <label for="nomeContato">Nome Completo:</label>
@@ -1382,9 +1357,9 @@ footer {
       
       <div class="contato-info">
         <h2 style="color: var(--azul-neon); margin-bottom: 20px; text-align: center;">Outras Formas de Contato</h2>
-        <p style="margin-bottom: 10px; text-align: center;"> (73) 98894-5407</p>
+        <p style="margin-bottom: 10px; text-align: center;">📱 (73) 98894-5407</p>
         <p style="margin-bottom: 10px; text-align: center;">✉️ felixtroncelular@gmail.com</p>
-        <p style="margin-bottom: 30px; text-align: center;"> Endereço: Rua C, 55, Conceição - Itabuna, BA</p>
+        <p style="margin-bottom: 30px; text-align: center;">📍 Endereço: Rua C, 55, Conceição - Itabuna, BA</p>
       </div>
       
       <div class="contato-opcoes">
@@ -1397,217 +1372,201 @@ footer {
       </div>
     </div>
 
-
-    <!-- PÁGINAS FUTURAS -->
-<div id="servicos-page" class="page" style="display: none; padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
-  <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Nossos Serviços</h1>
-  
-  <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; text-align: center; opacity: 0.9;">
-    Oferecemos uma gama completa de serviços especializados em manutenção de celulares.
-    Trabalhamos com as melhores peças do mercado e contamos com técnicos qualificados.
-  </p>
-
-
-  <div class="servicos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
-    
-    <!-- Troca de Tela -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; border-radius: 10px; margin-bottom: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-    <img src="trocadetela.jpg" alt="Troca de Tela de Celular" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Tela</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Reparo especializado para telas quebradas ou com problemas de toque. Utilizamos peças originais
-    e de alta qualidade com garantia. Recuperamos a funcionalidade completa do seu dispositivo.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Telas de qualidade</li>
-    <li style="margin-bottom: 8px;">Garantia no serviço</li>
-    <li style="margin-bottom: 8px;">Troca rápida e eficiente</li>
-  </ul>
-</div>
-
-
-    <!-- Troca de Bateria -->
-<div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; border-radius: 10px; margin-bottom: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-    <img src="trocabateria.jpg" alt="Troca de Bateria" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Bateria</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Substituição de baterias com baixa performance ou problemas de carga. Garantimos
-    baterias com máxima durabilidade e performance para seu dispositivo.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Baterias de alta capacidade</li>
-    <li style="margin-bottom: 8px;">Melhora significativa na autonomia</li>
-    <li style="margin-bottom: 8px;">Garantia de durabilidade</li>
-  </ul>
-</div>
-
-
-    <!-- Troca de Conector de Carga -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="conectorcarga.jpeg" alt="Troca de Conector de Carga" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Conector de Carga</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Solução para problemas de carregamento, conectores soltos ou danificados.
-    Substituição por conectores de qualidade para garantir carregamento eficiente.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Conectores de qualidade</li>
-    <li style="margin-bottom: 8px;">Carregamento rápido restaurado</li>
-    <li style="margin-bottom: 8px;">Proteção contra curto-circuito</li>
-  </ul>
-</div>
-
-
-    <!-- Reparo em Placa -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="reparoplaca.jpeg" alt="Reparo em Placa" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Reparo em Placa</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Diagnóstico e reparo de problemas complexos na placa-mãe do dispositivo.
-    Técnicos especializados em microsolda e componentes eletrônicos.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Microsolda especializada</li>
-    <li style="margin-bottom: 8px;">Diagnóstico preciso</li>
-    <li style="margin-bottom: 8px;">Componentes de qualidade</li>
-  </ul>
-</div>
-
-
-    <!-- Desoxidação -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="desoxidacao.jpeg" alt="Desoxidação" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Desoxidação</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Limpeza e recuperação de aparelhos que sofreram contato com líquidos.
-    Processo especializado para evitar corrosão e danos permanentes.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Limpeza profunda</li>
-    <li style="margin-bottom: 8px;">Prevenção de corrosão</li>
-    <li style="margin-bottom: 8px;">Recuperação de componentes</li>
-  </ul>
-</div>
-
-
-    <!-- Restauração do Sistema Operacional -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="sistemaop.jpg" alt="Restauração do Sistema" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Restauração do Sistema</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Solução para problemas de software, lentidão, travamentos e atualizações.
-    Recuperamos a performance original do seu dispositivo.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Formatação e reinstalação</li>
-    <li style="margin-bottom: 8px;">Atualização de sistema</li>
-    <li style="margin-bottom: 8px;">Otimização de performance</li>
-  </ul>
-</div>
-
-
-    <!-- Câmera e Módulos -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="cameracelular.jpg" alt="Troca de Câmera" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Troca de Câmera</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Reparo ou substituição de câmeras traseiras, frontais e módulos com problemas
-    de foco, imagem escura ou danos físicos.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Substituição de Câmera</li>
-    <li style="margin-bottom: 8px;">Calibração profissional</li>
-    <li style="margin-bottom: 8px;">Qualidade de imagem garantida</li>
-  </ul>
-</div>
-
-
-    <!-- Limpeza e Manutenção Preventiva -->
-    <div class="servico-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; backdrop-filter: blur(10px);">
-  <div class="servico-imagem" style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="prevencao.jpg" alt="Manutenção Preventiva" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <h3 style="color: var(--azul-neon); margin-bottom: 15px; font-size: 1.5em;">Manutenção Preventiva</h3>
-  <p style="color: var(--branco); margin-bottom: 20px; opacity: 0.9; line-height: 1.6;">
-    Limpeza interna completa e verificação de componentes para prevenir
-    problemas futuros e manter seu dispositivo em perfeito estado.
-  </p>
-  <ul style="color: var(--branco); opacity: 0.8; padding-left: 20px; margin-bottom: 20px;">
-    <li style="margin-bottom: 8px;">Limpeza interna profunda</li>
-    <li style="margin-bottom: 8px;">Verificação de componentes</li>
-    <li style="margin-bottom: 8px;">Prevenção de problemas</li>
-  </ul>
-</div>
-
-
-  </div>
-
-
-  <div style="text-align: center; margin-top: 50px;">
-    <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">
-      Não encontrou o serviço que precisa? Entre em contato conosco!
-    </p>
-    <a href="#contato" class="btn-destaque nav-link" data-page="contato" style="display: inline-block; width: auto; padding: 15px 30px;">Fale Conosco</a>
-  </div>
-</div>
-
-
-  <!-- PÁGINA BLOG -->
-<!-- PÁGINA BLOG -->
-<div id="blog-page" class="page" style="display: none; padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
-  <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Blog - Dicas Técnicas</h1>
-  <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; text-align: center; opacity: 0.9;">
-    Confira nossas dicas exclusivas para manter seu celular em perfeito estado e evitar problemas comuns.
-  </p>
-
-
-  <div class="blog-container">
-    
-    <!-- Card da matéria sobre 5 dicas -->
-    <div class="blog-card" onclick="window.open('5dicascelular.html', '_blank')">
-      <div class="blog-imagem">
-        <img src="cuidadocelular.jpg" alt="5 Dicas para Preservar seu Celular">
-      </div>
-      <h3>Cuidados Essenciais com seu Smartphone</h3>
-      <p>
-        Aprenda técnicas simples mas eficazes para aumentar a durabilidade do seu smartphone e evitar reparos desnecessários.
+    <!-- PÁGINA SERVIÇOS -->
+    <div id="servicos-page" class="page" style="display: none; padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
+      <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Nossos Serviços</h1>
+      
+      <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; text-align: center; opacity: 0.9;">
+        Oferecemos uma gama completa de serviços especializados em manutenção de celulares.
+        Trabalhamos com as melhores peças do mercado e contamos com técnicos qualificados.
       </p>
-      <div class="blog-meta">
-        <span class="blog-categoria"> Dicas Técnicas</span>
+
+      <div class="servicos-container">
+        <!-- Troca de Tela -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="trocadetela.jpg" alt="Troca de Tela de Celular">
+          </div>
+          <h3>Troca de Tela</h3>
+          <p>
+            Reparo especializado para telas quebradas ou com problemas de toque. Utilizamos peças originais
+            e de alta qualidade com garantia. Recuperamos a funcionalidade completa do seu dispositivo.
+          </p>
+          <ul>
+            <li>Telas de qualidade</li>
+            <li>Garantia no serviço</li>
+            <li>Troca rápida e eficiente</li>
+          </ul>
+        </div>
+
+        <!-- Troca de Bateria -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="trocabateria.jpg" alt="Troca de Bateria">
+          </div>
+          <h3>Troca de Bateria</h3>
+          <p>
+            Substituição de baterias com baixa performance ou problemas de carga. Garantimos
+            baterias com máxima durabilidade e performance para seu dispositivo.
+          </p>
+          <ul>
+            <li>Baterias de alta capacidade</li>
+            <li>Melhora significativa na autonomia</li>
+            <li>Garantia de durabilidade</li>
+          </ul>
+        </div>
+
+        <!-- Troca de Conector de Carga -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="conectorcarga.jpeg" alt="Troca de Conector de Carga">
+          </div>
+          <h3>Troca de Conector de Carga</h3>
+          <p>
+            Solução para problemas de carregamento, conectores soltos ou danificados.
+            Substituição por conectores de qualidade para garantir carregamento eficiente.
+          </p>
+          <ul>
+            <li>Conectores de qualidade</li>
+            <li>Carregamento rápido restaurado</li>
+            <li>Proteção contra curto-circuito</li>
+          </ul>
+        </div>
+
+        <!-- Reparo em Placa -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="reparoplaca.jpeg" alt="Reparo em Placa">
+          </div>
+          <h3>Reparo em Placa</h3>
+          <p>
+            Diagnóstico e reparo de problemas complexos na placa-mãe do dispositivo.
+            Técnicos especializados em microsolda e componentes eletrônicos.
+          </p>
+          <ul>
+            <li>Microsolda especializada</li>
+            <li>Diagnóstico preciso</li>
+            <li>Componentes de qualidade</li>
+          </ul>
+        </div>
+
+        <!-- Desoxidação -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="desoxidacao.jpeg" alt="Desoxidação">
+          </div>
+          <h3>Desoxidação</h3>
+          <p>
+            Limpeza e recuperação de aparelhos que sofreram contato com líquidos.
+            Processo especializado para evitar corrosão e danos permanentes.
+          </p>
+          <ul>
+            <li>Limpeza profunda</li>
+            <li>Prevenção de corrosão</li>
+            <li>Recuperação de componentes</li>
+          </ul>
+        </div>
+
+        <!-- Restauração do Sistema Operacional -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="sistemaop.jpg" alt="Restauração do Sistema">
+          </div>
+          <h3>Restauração do Sistema</h3>
+          <p>
+            Solução para problemas de software, lentidão, travamentos e atualizações.
+            Recuperamos a performance original do seu dispositivo.
+          </p>
+          <ul>
+            <li>Formatação e reinstalação</li>
+            <li>Atualização de sistema</li>
+            <li>Otimização de performance</li>
+          </ul>
+        </div>
+
+        <!-- Câmera e Módulos -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="cameracelular.jpg" alt="Troca de Câmera">
+          </div>
+          <h3>Troca de Câmera</h3>
+          <p>
+            Reparo ou substituição de câmeras traseiras, frontais e módulos com problemas
+            de foco, imagem escura ou danos físicos.
+          </p>
+          <ul>
+            <li>Substituição de Câmera</li>
+            <li>Calibração profissional</li>
+            <li>Qualidade de imagem garantida</li>
+          </ul>
+        </div>
+
+        <!-- Limpeza e Manutenção Preventiva -->
+        <div class="servico-card">
+          <div class="servico-imagem">
+            <img src="prevencao.jpg" alt="Manutenção Preventiva">
+          </div>
+          <h3>Manutenção Preventiva</h3>
+          <p>
+            Limpeza interna completa e verificação de componentes para prevenir
+            problemas futuros e manter seu dispositivo em perfeito estado.
+          </p>
+          <ul>
+            <li>Limpeza interna profunda</li>
+            <li>Verificação de componentes</li>
+            <li>Prevenção de problemas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">
+          Não encontrou o serviço que precisa? Entre em contato conosco!
+        </p>
+        <a href="#contato" class="btn-destaque nav-link" data-page="contato" style="display: inline-block; width: auto; padding: 15px 30px;">Fale Conosco</a>
       </div>
     </div>
 
+    <!-- PÁGINA BLOG -->
+    <div id="blog-page" class="page" style="display: none; padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
+      <h1 style="color: var(--ciano); font-size: 3em; margin-bottom: 30px; line-height: 1.2; padding: 0 10px; text-align: center;">Blog - Dicas Técnicas</h1>
+      <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; text-align: center; opacity: 0.9;">
+        Confira nossas dicas exclusivas para manter seu celular em perfeito estado e evitar problemas comuns.
+      </p>
 
-    <!-- Cards futuros podem ser adicionados aqui -->
-<div class="blog-card" onclick="window.open('celularaquecido.html', '_blank')">
-  <div class="blog-imagem">
-    <img src="celularaquecido.jpeg" alt="Celular superaquecido mostrando alerta de temperatura">
+      <div class="blog-container">
+        <!-- Card da matéria sobre 5 dicas -->
+        <div class="blog-card" onclick="window.open('5dicascelular.html', '_blank')">
+          <div class="blog-imagem">
+            <img src="cuidadocelular.jpg" alt="5 Dicas para Preservar seu Celular">
+          </div>
+          <h3>Cuidados Essenciais com seu Smartphone</h3>
+          <p>
+            Aprenda técnicas simples mas eficazes para aumentar a durabilidade do seu smartphone e evitar reparos desnecessários.
+          </p>
+          <div class="blog-meta">
+            <span class="blog-categoria">Dicas Técnicas</span>
+          </div>
+        </div>
+
+        <!-- Card da matéria sobre celular aquecido -->
+        <div class="blog-card" onclick="window.open('celularaquecido.html', '_blank')">
+          <div class="blog-imagem">
+            <img src="celularaquecido.jpeg" alt="Celular superaquecido mostrando alerta de temperatura">
+          </div>
+          <h3>Meu Celular Esquenta Muito: 5 Possíveis Causas e Soluções</h3>
+          <p>
+            Descubra as principais causas do superaquecimento do celular e aprenda soluções práticas para resolver esse problema comum.
+          </p>
+          <div class="blog-meta">
+            <span class="blog-categoria">Manutenção Preventiva</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h3>Meu Celular Esquenta Muito: 5 Possíveis Causas e Soluções</h3>
-  <p>
-    Descubra as principais causas do superaquecimento do celular e aprenda soluções práticas para resolver esse problema comum.
-  </p>
-  <div class="blog-meta">
-    <span class="blog-categoria"> Manutenção Preventiva</span>
-  </div>
-</div>
-</div>
 
-
+  <!-- RODAPÉ FIXO (FORA DE TODAS AS PÁGINAS) -->
   <footer>
     <div class="footer-content">
       <div class="footer-logo">
@@ -1626,9 +1585,9 @@ footer {
       
       <div class="footer-contact">
         <h3>Contato</h3>
-        <p> (73) 98894-5407</p>
-        <p>✉️ felixtron.netlify.app/contato</p>
-        <p> Endereço: Rua C, 55, Conceição - Itabuna, BA</p>
+        <p>📱 (73) 98894-5407</p>
+        <p>✉️ felixtroncelular@gmail.com</p>
+        <p>📍 Endereço: Rua C, 55, Conceição - Itabuna, BA</p>
         <a href="https://wa.me/5573988945407?text=Olá! Gostaria de solicitar um orçamento para meu celular."
           target="_blank" style="color: var(--ciano); text-decoration: none; margin-top: 10px; display: inline-block;">
           <i class="fab fa-whatsapp"></i> WhatsApp
@@ -1641,8 +1600,8 @@ footer {
     </div>
   </footer>
 
-
   <script>
+    // Seu script JavaScript aqui...
     document.addEventListener('DOMContentLoaded', function() {
       const navLinks = document.querySelectorAll('.nav-link');
       const pages = document.querySelectorAll('.page');

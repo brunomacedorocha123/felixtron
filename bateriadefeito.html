@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinais de Bateria com Defeito - FelixTron</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --azul-tech: #001f3f;
+      --azul-neon: #0074D9;
+      --ciano: #00D4FF;
+      --roxo-tech: #6A0DAD;
+      --roxo-neon: #B10DC9;
+      --cinza-escuro: #1a1a1a;
+      --cinza-medio: #2d2d2d;
+      --cinza-claro: #404040;
+      --branco: #ffffff;
+      --preto: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--azul-tech) 0%, var(--preto) 100%);
+      color: var(--branco);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      color: var(--ciano);
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .meta-info {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .intro-section {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .intro-image {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+
+    .intro-image img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid var(--ciano);
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+    }
+
+    .intro-text {
+      flex: 1;
+    }
+
+    .content {
+      font-size: 1.1em;
+    }
+
+    .content h2 {
+      color: var(--azul-neon);
+      margin: 30px 0 15px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .content h3 {
+      color: var(--ciano);
+      margin: 25px 0 12px;
+      font-size: 1.4em;
+      text-align: center;
+    }
+
+    /* CORREÇÃO PRINCIPAL: TODOS OS TEXTOS JUSTIFICADOS */
+    .content p {
+      margin-bottom: 20px;
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    .content ul, .content ol {
+      margin: 15px 0 20px 30px;
+    }
+
+    .content li {
+      margin-bottom: 10px;
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    .highlight-box {
+      background: rgba(0, 212, 255, 0.1);
+      border-left: 4px solid var(--ciano);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .highlight-box h3 {
+      text-align: left !important;
+    }
+
+    .highlight-box p {
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    .highlight-box ul {
+      margin: 15px 0 0 20px;
+    }
+
+    .highlight-box li {
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    .warning-box {
+      background: rgba(231, 76, 60, 0.1);
+      border-left: 4px solid #e74c3c;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .warning-box p {
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      margin-top: 30px;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 116, 217, 0.4);
+    }
+
+    .btn-back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 116, 217, 0.6);
+    }
+
+    .btn-back i {
+      margin-right: 8px;
+    }
+
+    /* CORREÇÃO PARA TEXTOS DA INTRO-SECTION */
+    .intro-text p {
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+      
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .content {
+        font-size: 1em;
+      }
+      
+      .intro-section {
+        flex-direction: column;
+      }
+      
+      .intro-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      .intro-image img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Sinais de que a bateria do seu celular pode estar com defeito</h1>
+      <div class="meta-info">
+        <span><i class="far fa-calendar"></i> Publicado em: 29/09/2025</span> | 
+        <span><i class="far fa-folder"></i> Categoria: Manutenção Preventiva</span>
+      </div>
+    </div>
+
+    <div class="intro-section">
+      <div class="intro-image">
+        <img src="bateriadefeito.jpeg" alt="Sinais de bateria com defeito em celular">
+      </div>
+      <div class="intro-text">
+        <p>A bateria é o coração do celular. É ela que fornece a energia necessária para o funcionamento de todos os componentes do aparelho. Porém, assim como qualquer peça eletrônica, a bateria tem uma vida útil limitada e, com o tempo, pode começar a apresentar defeitos.</p>
+        <p>Identificar esses sinais cedo é importante não apenas para manter o bom desempenho do smartphone, mas também para evitar riscos de segurança, já que uma bateria defeituosa pode inchar, vazar ou até provocar acidentes.</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Principais sinais de bateria com defeito</h2>
+
+      <h3>1. A bateria descarrega rápido demais</h3>
+      <p>Um dos sinais mais comuns é quando o celular não segura mais carga. Antes, você conseguia passar o dia inteiro com uma única carga. Agora, precisa recarregar várias vezes. Mesmo sem usar muito, o percentual cai de forma acelerada.</p>
+      <p>Isso acontece porque, com o tempo, a bateria perde capacidade de retenção de energia. É como se o reservatório de energia ficasse cada vez menor.</p>
+
+      <h3>2. O celular desliga antes de chegar a 0%</h3>
+      <p>Outro sinal clássico é quando o aparelho desliga sozinho, mesmo indicando que ainda resta carga. Pode desligar com 20%, 30% ou até 50%. Ao ligar de novo, mostra outro percentual, sem consistência.</p>
+      <p>Esse comportamento indica que a bateria não consegue entregar energia de forma estável, ou que o sensor interno não está mais medindo corretamente a carga disponível.</p>
+
+      <h3>3. Superaquecimento frequente</h3>
+      <p>Todo celular esquenta um pouco durante o uso intenso ou enquanto carrega, mas o aquecimento excessivo é sinal de problema. Se o aparelho esquenta demais em tarefas simples, a bateria pode estar sobrecarregada ou com falha interna.</p>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Atenção:</strong> Em casos mais graves, o superaquecimento pode danificar outros componentes ou até causar risco de incêndio.</p>
+      </div>
+
+      <h3>4. Bateria estufada</h3>
+      <p>Esse é um dos sinais mais perigosos. O celular começa a ficar com a tampa traseira levantada ou a tela "esticada" para frente. A carcaça pode apresentar frestas, como se algo estivesse empurrando por dentro.</p>
+      <p>A causa é o acúmulo de gases dentro da bateria, resultado de reações químicas anormais.</p>
+
+      <div class="warning-box">
+        <p><strong>🚨 PERIGO:</strong> Uma bateria estufada deve ser trocada imediatamente, pois pode vazar ou explodir.</p>
+      </div>
+
+      <h3>5. Demora excessiva para carregar</h3>
+      <p>Se o celular levava cerca de 1 a 2 horas para carregar e, de repente, passa a demorar o dobro do tempo, pode ser a bateria perdendo eficiência. Em alguns casos, também pode ser problema no carregador ou no conector.</p>
+
+      <h3>6. O celular só funciona ligado na tomada</h3>
+      <p>Quando a bateria chega a um estágio crítico, o celular simplesmente não consegue ligar sem estar conectado ao carregador. Isso significa que a bateria já não tem mais capacidade de armazenar energia suficiente para iniciar o sistema.</p>
+
+      <h3>7. Carga "instável"</h3>
+      <p>Outro sintoma é a variação brusca de porcentagem: em minutos, o celular pula de 60% para 30%, depois volta para 50%. Essa oscilação mostra que a bateria perdeu a precisão na entrega e no controle da energia.</p>
+
+      <h2>O que fazer se a bateria apresentar esses sinais?</h2>
+      
+      <div class="highlight-box">
+        <h3>✅ Soluções recomendadas:</h3>
+        <ul>
+          <li><strong>Troque a bateria:</strong> é a solução definitiva. Procure uma assistência técnica de confiança e peça uma bateria original ou de boa qualidade.</li>
+          <li><strong>Não continue usando bateria estufada:</strong> o risco de acidentes é real.</li>
+          <li><strong>Evite improvisos:</strong> não tente furar, pressionar ou consertar a bateria por conta própria.</li>
+          <li><strong>Mantenha hábitos saudáveis:</strong> evite carregar em excesso, usar carregadores falsificados e expor o celular a calor extremo.</li>
+        </ul>
+      </div>
+
+      <h2>Conclusão</h2>
+      <p>A bateria é um componente essencial para o funcionamento do celular, mas tem uma vida útil limitada. Com o tempo, ela perde eficiência e pode apresentar sinais claros de defeito, como descarga rápida, desligamentos inesperados, superaquecimento, estufamento e até instabilidade na carga.</p>
+      <p>Saber identificar esses sintomas ajuda a evitar maiores prejuízos e riscos. Se notar algum dos sinais descritos, o ideal é buscar uma assistência técnica e realizar a substituição da bateria o quanto antes.</p>
+      <p>Cuidar da bateria não só prolonga a vida útil do seu smartphone, como também garante a sua segurança.</p>
+
+      <div class="highlight-box">
+        <h3>🔧 Precisa trocar a bateria do seu celular?</h3>
+        <p>Na FelixTron, realizamos a troca de bateria com peças de qualidade e garantia. Entre em contato e agende seu reparo!</p>
+        <a href="https://wa.me/5573988945407?text=Olá! Preciso trocar a bateria do meu celular." class="btn-back" target="_blank">
+          <i class="fab fa-whatsapp"></i> Falar com Especialista
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" class="btn-back">
+          <i class="fas fa-home"></i> Voltar para Home
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

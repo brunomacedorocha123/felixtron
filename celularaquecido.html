@@ -33,124 +33,143 @@
             color: var(--branco);
             line-height: 1.6;
             min-height: 100vh;
-            overflow-x: hidden;
-            text-align: justify;
-            hyphens: auto;
-            -webkit-hyphens: auto;
-            -moz-hyphens: auto;
-            -ms-hyphens: auto;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header do Blog */
-        .blog-header {
-            background: rgba(0, 31, 63, 0.95);
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 3px solid var(--ciano);
-            margin-bottom: 40px;
-        }
-
-        .blog-header h1 {
-            color: var(--ciano);
-            font-size: 3em;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, var(--ciano), var(--azul-neon));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        .blog-meta {
-            color: var(--branco);
-            opacity: 0.8;
-            font-size: 1.1em;
-            text-align: center;
-        }
-
-        /* Conteúdo do Artigo */
-        .article-content {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 40px;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
 
-        .article-content p {
-            text-align: justify;
-            word-spacing: -0.05em;
-            letter-spacing: 0.01em;
-            margin-bottom: 15px;
-        }
-
-        .dica {
-            margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .dica:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        .dica h3 {
-            color: var(--ciano);
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+        .header {
             text-align: center;
-            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
-        .dica-number {
-            background: linear-gradient(45deg, var(--ciano), var(--azul-neon));
-            color: var(--preto);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1em;
-            box-shadow: 0 4px 10px rgba(0, 212, 255, 0.4);
-        }
-
-        .dica strong {
+        .header h1 {
             color: var(--ciano);
-            font-weight: 600;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
-        .dica-content {
-            text-align: justify;
-            word-spacing: -0.05em;
-            letter-spacing: 0.01em;
+        .meta-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .dica-content p {
-            margin-bottom: 12px;
+        .intro-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 40px;
         }
 
-        /* Botão Voltar */
-        .btn-voltar {
+        .intro-image {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--ciano);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .content {
+            font-size: 1.1em;
+        }
+
+        .content h2 {
+            color: var(--azul-neon);
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .content h3 {
+            color: var(--ciano);
+            margin: 25px 0 12px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        /* CORREÇÃO PRINCIPAL: TODOS OS TEXTOS JUSTIFICADOS */
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .content ul, .content ol {
+            margin: 15px 0 20px 30px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .highlight-box {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid var(--ciano);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h3 {
+            text-align: left !important;
+        }
+
+        .highlight-box p {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .highlight-box ul {
+            margin: 15px 0 0 20px;
+        }
+
+        .highlight-box li {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .warning-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box p {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .btn-back {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
             background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
             color: white;
             padding: 12px 25px;
@@ -158,283 +177,197 @@
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
+            margin-top: 30px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 116, 217, 0.4);
+        }
+
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 116, 217, 0.6);
+        }
+
+        .btn-back i {
+            margin-right: 8px;
+        }
+
+        /* CORREÇÃO PARA TEXTOS DA INTRO-SECTION */
+        .intro-text p {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        /* Estilo para as dicas numeradas */
+        .dica {
             margin-bottom: 30px;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 116, 217, 0.4);
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .btn-voltar:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 116, 217, 0.6);
+        .dica h3 {
+            color: var(--ciano);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* Botão Orçamento */
-        .btn-orcamento {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
+        .dica-number {
+            background: linear-gradient(45deg, var(--ciano), var(--azul-neon));
+            color: var(--preto);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 116, 217, 0.4);
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
-        .btn-orcamento:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 116, 217, 0.6);
-        }
-
-        /* Seções especiais */
         .dica-bonus {
-            background: rgba(255, 100, 0, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 40px;
-            border: 1px solid rgba(255, 107, 0, 0.3);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.2);
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
         }
 
         .dica-bonus h3 {
-            color: #FF6B00;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.5em;
+            color: #FFC107;
+            text-align: left !important;
         }
 
         .dica-bonus p {
-            text-align: justify;
-            word-spacing: -0.05em;
-            letter-spacing: 0.01em;
+            text-align: justify !important;
         }
 
-        .alerta-importante {
-            background: rgba(255, 0, 0, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            border: 1px solid rgba(255, 68, 68, 0.3);
-            box-shadow: 0 8px 25px rgba(255, 68, 68, 0.2);
-        }
-
-        .alerta-importante h3 {
-            color: #FF4444;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.5em;
-        }
-
-        .alerta-importante p {
-            text-align: justify;
-            word-spacing: -0.05em;
-            letter-spacing: 0.01em;
-        }
-
-        /* Footer do Blog */
-        .blog-footer {
-            background: rgba(0, 31, 63, 0.95);
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 3px solid var(--ciano);
-        }
-
-        .blog-footer p {
-            text-align: center;
-        }
-
-        /* Responsividade */
         @media (max-width: 768px) {
-            .blog-header h1 {
-                font-size: 2.2em;
-            }
-            
-            .article-content {
-                padding: 25px;
-            }
-            
-            .dica {
-                padding: 25px;
-                margin-bottom: 30px;
-            }
-            
-            .dica h3 {
-                font-size: 1.3em;
-                gap: 10px;
-            }
-            
-            .dica-number {
-                width: 30px;
-                height: 30px;
-                font-size: 1em;
-            }
-            
-            .article-content p {
-                font-size: 0.95em;
-                line-height: 1.5;
-            }
-            
-            .btn-orcamento {
-                padding: 12px 25px;
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .blog-header h1 {
-                font-size: 1.8em;
-            }
-            
-            .article-content {
+            .container {
                 padding: 20px;
             }
             
-            .dica {
-                padding: 20px;
+            .header h1 {
+                font-size: 2em;
             }
             
-            .dica h3 {
-                font-size: 1.2em;
+            .content {
+                font-size: 1em;
+            }
+            
+            .intro-section {
                 flex-direction: column;
+            }
+            
+            .intro-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .intro-image img {
+                max-width: 100%;
+            }
+
+            .dica h3 {
+                flex-direction: column;
+                align-items: flex-start;
                 gap: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Botão Voltar -->
-    <div class="container" style="margin-top: 20px;">
-        <a href="index.html#blog" class="btn-voltar">
-            <i class="fas fa-arrow-left"></i> Voltar ao Home
-        </a>
-    </div>
-
-    <!-- Cabeçalho do Artigo -->
-    <header class="blog-header">
-        <div class="container">
+    <div class="container">
+        <div class="header">
             <h1>Meu Celular Esquenta Muito: 5 Causas e Soluções</h1>
-            <div class="blog-meta">
-                <span>📱 Por FelixTron  | 🗓️ 2025</span>
+            <div class="meta-info">
+                <span><i class="far fa-calendar"></i> Publicado em: 2025</span> | 
+                <span><i class="far fa-folder"></i> Categoria: Manutenção Preventiva</span>
             </div>
         </div>
-    </header>
 
-    <!-- Conteúdo do Artigo -->
-    <div class="container">
-        <article class="article-content">
-            <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.9;">
-                Seu celular está esquentando mais do que o normal? O superaquecimento pode ser sinal de vários problemas. 
-                Descubra as principais causas e como resolver esse incômodo que pode danificar seu aparelho.
-            </p>
+        <div class="intro-section">
+            <div class="intro-image">
+                <img src="celularaquecido.jpeg" alt="Celular superaquecido mostrando alerta de temperatura">
+            </div>
+            <div class="intro-text">
+                <p>Seu celular está esquentando mais do que o normal? O superaquecimento pode ser sinal de vários problemas. Descubra as principais causas e como resolver esse incômodo que pode danificar seu aparelho.</p>
+                <p>O superaquecimento não é apenas desconfortável - pode reduzir a vida útil da bateria, causar danos permanentes aos componentes internos e até representar riscos de segurança.</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Principais Causas do Superaquecimento</h2>
 
             <!-- Causa 1 -->
             <div class="dica">
                 <h3><span class="dica-number">1</span> Excesso de Processamento (Uso Intenso de Apps)</h3>
-                <div class="dica-content">
-                    <p><strong>O que acontece:</strong> Quando você exige muito do celular - jogando games pesados, editando vídeos ou usando GPS por longos períodos - o processador trabalha no limite, gerando calor.</p>
-                    <p><strong>Solução:</strong> Feche aplicativos em segundo plano, faça pausas durante sessões longas e reduza a qualidade gráfica nos jogos.</p>
-                </div>
+                <p><strong>O que acontece:</strong> Quando você exige muito do celular - jogando games pesados, editando vídeos ou usando GPS por longos períodos - o processador trabalha no limite, gerando calor.</p>
+                <p><strong>Solução:</strong> Feche aplicativos em segundo plano, faça pausas durante sessões longas e reduza a qualidade gráfica nos jogos.</p>
             </div>
 
             <!-- Causa 2 -->
             <div class="dica">
                 <h3><span class="dica-number">2</span> Exposição a Ambientes Quentes</h3>
-                <div class="dica-content">
-                    <p><strong>O que acontece:</strong> Deixar o celular no sol, dentro do carro fechado ou em ambientes abafados faz com que ele absorva calor externo, dificultando o resfriamento.</p>
-                    <p><strong>Solução:</strong> Mantenha o aparelho na sombra, nunca deixe no carro estacionado e retire capas protetoras grossas em dias muito quentes.</p>
-                </div>
+                <p><strong>O que acontece:</strong> Deixar o celular no sol, dentro do carro fechado ou em ambientes abafados faz com que ele absorva calor externo, dificultando o resfriamento.</p>
+                <p><strong>Solução:</strong> Mantenha o aparelho na sombra, nunca deixe no carro estacionado e retire capas protetoras grossas em dias muito quentes.</p>
             </div>
 
             <!-- Causa 3 -->
             <div class="dica">
                 <h3><span class="dica-number">3</span> Problemas com a Bateria</h3>
-                <div class="dica-content">
-                    <p><strong>O que acontece:</strong> Baterias defeituosas, desgastadas pelo tempo ou de baixa qualidade podem superaquecer durante o carregamento ou uso normal.</p>
-                    <p><strong>Solução:</strong> Use carregadores originais, evite usar o celular enquanto carrega e desconfie se a bateria inchou ou descarrega muito rápido.</p>
-                </div>
+                <p><strong>O que acontece:</strong> Baterias defeituosas, desgastadas pelo tempo ou de baixa qualidade podem superaquecer durante o carregamento ou uso normal.</p>
+                <p><strong>Solução:</strong> Use carregadores originais, evite usar o celular enquanto carrega e desconfie se a bateria inchou ou descarrega muito rápido.</p>
             </div>
 
             <!-- Causa 4 -->
             <div class="dica">
                 <h3><span class="dica-number">4</span> Sinal Fraco de Rede (Celular ou Wi-Fi)</h3>
-                <div class="dica-content">
-                    <p><strong>O que acontece:</strong> Quando o sinal está fraco, o celular trabalha mais para se manter conectado, consumindo mais energia e gerando calor excessivo.</p>
-                    <p><strong>Solução:</strong> Ative o modo avião em áreas com sinal muito ruim ou conecte-se a uma rede Wi-Fi estável.</p>
-                </div>
+                <p><strong>O que acontece:</strong> Quando o sinal está fraco, o celular trabalha mais para se manter conectado, consumindo mais energia e gerando calor excessivo.</p>
+                <p><strong>Solução:</strong> Ative o modo avião em áreas com sinal muito ruim ou conecte-se a uma rede Wi-Fi estável.</p>
             </div>
 
             <!-- Causa 5 -->
             <div class="dica">
                 <h3><span class="dica-number">5</span> Software Desatualizado ou com Malware</h3>
-                <div class="dica-content">
-                    <p><strong>O que acontece:</strong> Apps mal otimizados, sistema desatualizado ou vírus podem fazer o processador trabalhar sem necessidade, mesmo em repouso.</p>
-                    <p><strong>Solução:</strong> Mantenha sistema e apps atualizados, desinstale aplicativos não usados e faça verificação regular com antivírus.</p>
-                </div>
+                <p><strong>O que acontece:</strong> Apps mal otimizados, sistema desatualizado ou vírus podem fazer o processador trabalhar sem necessidade, mesmo em repouso.</p>
+                <p><strong>Solução:</strong> Mantenha sistema e apps atualizados, desinstale aplicativos não usados e faça verificação regular com antivírus.</p>
             </div>
 
             <!-- Dica Bônus -->
             <div class="dica-bonus">
                 <h3>🔥 Resfriamento Imediato</h3>
-                <p>Se o celular estiver muito quente: feche todos os apps, coloque em local ventilado (não na geladeira!) e evite usar até normalizar a temperatura.</p>
+                <p>Se o celular estiver muito quente: feche todos os apps, coloque em local ventilado (não na geladeira!) e evite usar até normalizar a temperatura. O choque térmico pode danificar componentes internos sensíveis.</p>
             </div>
 
             <!-- Alerta Importante -->
-            <div class="alerta-importante">
-                <h3>⚠️ Quando se Preocupar?</h3>
-                <p>Se o superaquecimento for constante mesmo seguindo essas dicas, pode ser problema hardware interno. Traga seu aparelho para uma avaliação profissional na FelixTron!</p>
+            <div class="warning-box">
+                <p><strong>⚠️ Quando se Preocupar?</strong> Se o superaquecimento for constante mesmo seguindo essas dicas, pode ser problema hardware interno. Traga seu aparelho para uma avaliação profissional na FelixTron!</p>
             </div>
 
-            <!-- Botão Orçamento -->
+            <h2>Conclusão</h2>
+            <p>O superaquecimento do celular pode ter diversas causas, desde uso intensivo até problemas mais sérios de hardware. Identificar a origem do problema é o primeiro passo para uma solução eficaz.</p>
+            <p>Na maioria dos casos, ajustes simples nos hábitos de uso e manutenção preventiva podem resolver o problema. Porém, quando o aquecimento persiste, é fundamental buscar assistência especializada para evitar danos maiores ao aparelho.</p>
+
+            <div class="highlight-box">
+                <h3>🔧 Precisa de ajuda com seu celular?</h3>
+                <p>Se seu celular continua superaquecendo mesmo após seguir estas dicas, pode ser necessário um reparo profissional. Na FelixTron, temos técnicos especializados para diagnosticar e resolver problemas de superaquecimento.</p>
+                <a href="https://wa.me/5573988945407?text=Olá! Meu celular está superaquecendo e preciso de ajuda." class="btn-back" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Falar com Especialista
+                </a>
+            </div>
+
             <div style="text-align: center; margin-top: 40px;">
-                <button class="btn-orcamento" onclick="redirecionarParaOrcamento()">
-                    <i class="fas fa-tools"></i> Precisa de Ajuda? Faça um Orçamento!
-                </button>
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-home"></i> Voltar para Home
+                </a>
             </div>
-        </article>
-    </div>
-
-    <!-- Rodapé -->
-    <footer class="blog-footer">
-        <div class="container">
-            <p>© 2025 FelixTron - Manutenção de Celulares - Todos os direitos reservados</p>
-            <p style="margin-top: 10px; opacity: 0.8;">📱 (73) 98894-5407 | ✉️ felixtroncelular@gmail.com</p>
         </div>
-    </footer>
-
-    <script>
-        // Função para redirecionar para a página de orçamento
-        function redirecionarParaOrcamento() {
-            // Salva no localStorage que queremos ir para o orçamento
-            localStorage.setItem('paginaDestino', 'orcamento');
-            
-            // Redireciona para a página principal
-            window.location.href = 'index.html';
-        }
-
-        // Função para ser executada quando a página principal carregar
-        function processarRedirecionamento() {
-            const paginaDestino = localStorage.getItem('paginaDestino');
-            
-            if (paginaDestino === 'orcamento') {
-                // Limpa o localStorage
-                localStorage.removeItem('paginaDestino');
-                
-                // Chama a função showPage da página principal
-                if (typeof showPage === 'function') {
-                    showPage('orcamento');
-                }
-            }
-        }
-
-        // Verifica se estamos na página principal e processa o redirecionamento
-        if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
-            processarRedirecionamento();
-        }
-    </script>
+    </div>
 </body>
 </html>

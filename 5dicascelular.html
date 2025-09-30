@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Dicas para Preservar a Vida Útil do seu Celular - FelixTron</title>
+    <title>Cuidados Essenciais com seu Smartphone - FelixTron</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -33,70 +33,191 @@
             color: var(--branco);
             line-height: 1.6;
             min-height: 100vh;
-            overflow-x: hidden;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header do Blog */
-        .blog-header {
-            background: rgba(0, 31, 63, 0.95);
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 3px solid var(--ciano);
-            margin-bottom: 40px;
-        }
-
-        .blog-header h1 {
-            color: var(--ciano);
-            font-size: 3em;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, var(--ciano), var(--azul-neon));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .blog-meta {
-            color: var(--branco);
-            opacity: 0.8;
-            font-size: 1.1em;
-        }
-
-        /* Conteúdo do Artigo */
-        .article-content {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 40px;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
 
-        .dica {
+        .header {
+            text-align: center;
             margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--ciano);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .meta-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .intro-image {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--ciano);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .content {
+            font-size: 1.1em;
+        }
+
+        .content h2 {
+            color: var(--azul-neon);
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .content h3 {
+            color: var(--ciano);
+            margin: 25px 0 12px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        /* CORREÇÃO PRINCIPAL: TODOS OS TEXTOS JUSTIFICADOS */
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .content ul, .content ol {
+            margin: 15px 0 20px 30px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .highlight-box {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid var(--ciano);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h3 {
+            text-align: left !important;
+        }
+
+        .highlight-box p {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .highlight-box ul {
+            margin: 15px 0 0 20px;
+        }
+
+        .highlight-box li {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .warning-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box p {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 30px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 116, 217, 0.4);
+        }
+
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 116, 217, 0.6);
+        }
+
+        .btn-back i {
+            margin-right: 8px;
+        }
+
+        /* CORREÇÃO PARA TEXTOS DA INTRO-SECTION */
+        .intro-text p {
+            text-align: justify !important;
+            text-justify: inter-word;
+            hyphens: none;
+        }
+
+        /* Estilo para as dicas numeradas */
+        .dica {
+            margin-bottom: 30px;
             padding: 25px;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 10px;
-            border-left: 4px solid var(--ciano);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .dica h3 {
             color: var(--ciano);
             margin-bottom: 15px;
-            font-size: 1.5em;
+            font-size: 1.4em;
             display: flex;
             align-items: center;
-            justify-content: center; /* Centraliza o título */
             gap: 10px;
-            text-align: center; /* Garante alinhamento central do texto */
         }
 
         .dica-number {
-            background: var(--ciano);
+            background: linear-gradient(45deg, var(--ciano), var(--azul-neon));
             color: var(--preto);
             width: 30px;
             height: 30px;
@@ -105,229 +226,153 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            font-size: 1em;
         }
 
-        .dica p {
-            text-align: justify; /* Justifica o texto */
-            margin-bottom: 10px;
-            /* Evita hifens nas quebras de linha */
-            -webkit-hyphens: none;
-            -moz-hyphens: none;
-            hyphens: none;
-            /* Permite quebra de palavras longas se necessário */
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+        .dica-bonus {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
         }
 
-        .dica img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 2px solid var(--ciano);
+        .dica-bonus h3 {
+            color: #FFC107;
+            text-align: left !important;
         }
 
-        /* Botão Voltar */
-        .btn-voltar {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin-bottom: 30px;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 116, 217, 0.4);
-        }
-
-        .btn-voltar:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 116, 217, 0.6);
-        }
-
-        /* Botão Orçamento */
-        .btn-orcamento {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 116, 217, 0.4);
-            cursor: pointer;
-        }
-
-        .btn-orcamento:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 116, 217, 0.6);
-        }
-
-        /* Footer do Blog */
-        .blog-footer {
-            background: rgba(0, 31, 63, 0.95);
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 3px solid var(--ciano);
+        .dica-bonus p {
+            text-align: justify !important;
         }
 
         @media (max-width: 768px) {
-            .blog-header h1 {
-                font-size: 2.2em;
-            }
-            
-            .article-content {
-                padding: 25px;
-            }
-            
-            .dica {
+            .container {
                 padding: 20px;
             }
             
-            /* Melhorias para mobile */
-            .dica p {
-                text-align: justify;
-                /* Garante que o texto preencha toda a largura disponível */
-                width: 100%;
-                /* Permite quebra de palavras longas para preencher a borda */
-                word-break: break-word;
-                /* Evita que palavras sejam quebradas com hífen */
-                -webkit-hyphens: none;
-                -moz-hyphens: none;
-                hyphens: none;
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                font-size: 1em;
+            }
+            
+            .intro-section {
+                flex-direction: column;
+            }
+            
+            .intro-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .intro-image img {
+                max-width: 100%;
+            }
+
+            .dica h3 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Botão Voltar -->
-    <div class="container" style="margin-top: 20px;">
-        <a href="index.html#blog" class="btn-voltar">
-            <i class="fas fa-arrow-left"></i> Voltar ao Home
-        </a>
-    </div>
-
-    <!-- Cabeçalho do Artigo -->
-    <header class="blog-header">
-        <div class="container">
+    <div class="container">
+        <div class="header">
             <h1>Cuidados Essenciais com seu Smartphone</h1>
-            <div class="blog-meta">
-                <span>📱 Por FelixTron  | 🗓️ 2025</span>
+            <div class="meta-info">
+                <span><i class="far fa-calendar"></i> Publicado em: 2025</span> | 
+                <span><i class="far fa-folder"></i> Categoria: Dicas Técnicas</span>
             </div>
         </div>
-    </header>
 
-    <!-- Conteúdo do Artigo -->
-    <div class="container">
-        <article class="article-content">
-            <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.9; text-align: justify;">
-                Seu smartphone é uma ferramenta essencial no dia a dia. Seguindo estas dicas simples, 
-                você pode aumentar significativamente sua vida útil e evitar reparos desnecessários.
-            </p>
+        <div class="intro-section">
+            <div class="intro-image">
+                <img src="cuidadocelular.jpg" alt="Cuidados essenciais com smartphone">
+            </div>
+            <div class="intro-text">
+                <p>Seu smartphone é uma ferramenta essencial no dia a dia. Seguindo estas dicas simples, você pode aumentar significativamente sua vida útil e evitar reparos desnecessários.</p>
+                <p>Muitos problemas comuns em celulares podem ser evitados com cuidados preventivos simples. Conheça as práticas que vão manter seu dispositivo funcionando perfeitamente por mais tempo.</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>5 Dicas Essenciais para Preservar seu Celular</h2>
 
             <!-- Dica 1 -->
             <div class="dica">
                 <h3><span class="dica-number">1</span> Cuidado com a Bateria</h3>
-                <p><strong>Evite carregamentos extremos:</strong> Não deixe a bateria chegar a 0% nem manter sempre em 100%.</p>
-                <p><strong>Faça ciclos parciais:</strong> Mantenha a bateria entre 20% e 80% para maior durabilidade.</p>
-                <p><strong>Use carregadores originais:</strong> Carregadores genéricos podem danificar a bateria e o circuito.</p>
-                <p><strong>Evite usar enquanto carrega:</strong> Isso causa superaquecimento e desgaste acelerado.</p>
+                <p><strong>Evite carregamentos extremos:</strong> Não deixe a bateria chegar a 0% nem manter sempre em 100%. Os extremos prejudicam a saúde da bateria a longo prazo.</p>
+                <p><strong>Faça ciclos parciais:</strong> Mantenha a bateria entre 20% e 80% para maior durabilidade. Essa prática pode aumentar a vida útil da bateria em até 4 vezes.</p>
+                <p><strong>Use carregadores originais:</strong> Carregadores genéricos podem danificar a bateria e o circuito de carregamento, causando superaquecimento e redução da capacidade.</p>
+                <p><strong>Evite usar enquanto carrega:</strong> Isso causa superaquecimento e desgaste acelerado dos componentes internos, especialmente durante jogos ou vídeos.</p>
             </div>
 
             <!-- Dica 2 -->
             <div class="dica">
                 <h3><span class="dica-number">2</span> Proteção contra Impactos e Quedas</h3>
-                <p><strong>Use capa e película:</strong> Investir em boa proteção evita 80% dos reparos por quedas.</p>
-                <p><strong>Cuidado com bolsos:</strong> Evite colocar junto com chaves ou objetos pontiagudos.</p>
-                <p><strong>Mantenha longe de bordas:</strong> Não deixe o celular em mesas ou superfícies elevadas.</p>
-                <p><strong>Transporte adequado:</strong> Use bolsas ou cases específicos para transporte.</p>
+                <p><strong>Use capa e película:</strong> Investir em boa proteção evita 80% dos reparos por quedas. Escolha capas com proteção nas bordas e cantos.</p>
+                <p><strong>Cuidado com bolsos:</strong> Evite colocar junto com chaves ou objetos pontiagudos que possam riscar a tela ou danificar a carcaça.</p>
+                <p><strong>Mantenha longe de bordas:</strong> Não deixe o celular em mesas ou superfícies elevadas onde possa cair facilmente.</p>
+                <p><strong>Transporte adequado:</strong> Use bolsas ou cases específicos para transporte, especialmente durante atividades físicas ou viagens.</p>
             </div>
 
             <!-- Dica 3 -->
             <div class="dica">
                 <h3><span class="dica-number">3</span> Proteção contra Líquidos e Umidade</h3>
-                <p><strong>Mantenha longe de líquidos:</strong> Mesmo celulares à prova d'água têm limitações.</p>
-                <p><strong>Cuidado com banheiro e cozinha:</strong> Vapor e umidade são inimigos dos componentes eletrônicos.</p>
-                <p><strong>Use capas impermeáveis:</strong> Para ambientes com risco de respingos.</p>
-                <p><strong>Secagem imediata:</strong> Em caso de contato com líquido, desligue e seque imediatamente.</p>
+                <p><strong>Mantenha longe de líquidos:</strong> Mesmo celulares à prova d'água têm limitações de profundidade e tempo de exposição.</p>
+                <p><strong>Cuidado com banheiro e cozinha:</strong> Vapor e umidade são inimigos dos componentes eletrônicos e podem causar oxidação interna.</p>
+                <p><strong>Use capas impermeáveis:</strong> Para ambientes com risco de respingos como praia, piscina ou durante exercícios.</p>
+                <p><strong>Secagem imediata:</strong> Em caso de contato com líquido, desligue imediatamente, seque com pano macio e não use secadores.</p>
             </div>
 
             <!-- Dica 4 -->
             <div class="dica">
                 <h3><span class="dica-number">4</span> Cuidados com a Tela</h3>
-                <p><strong>Limpeza adequada:</strong> Use panos macios e específicos para telas.</p>
-                <p><strong>Evite pressão excessiva:</strong> Não force a tela com objetos pontiagudos.</p>
-                <p><strong>Proteção contra calor:</strong> Não exponha ao sol direto por longos períodos.</p>
-                <p><strong>Atualizações regulares:</strong> Mantenha o sistema atualizado para otimização do touch.</p>
+                <p><strong>Limpeza adequada:</strong> Use panos macios e específicos para telas. Evite produtos de limpeza que possam danificar o revestimento oleofóbico.</p>
+                <p><strong>Evite pressão excessiva:</strong> Não force a tela com objetos pontiagudos e mantenha as unhas cortadas para evitar arranhões.</p>
+                <p><strong>Proteção contra calor:</strong> Não exponha ao sol direto por longos períodos, especialmente dentro de carros estacionados.</p>
+                <p><strong>Atualizações regulares:</strong> Mantenha o sistema atualizado para otimização do touch e correção de possíveis bugs.</p>
             </div>
 
             <!-- Dica 5 -->
             <div class="dica">
                 <h3><span class="dica-number">5</span> Manutenção Preventiva do Sistema</h3>
-                <p><strong>Limpeza de cache:</strong> Faça regularmente para manter a performance.</p>
-                <p><strong>Apps desnecessários:</strong> Remova aplicativos que não usa.</p>
-                <p><strong>Backup regular:</strong> Mantenha seus dados sempre seguros.</p>
-                <p><strong>Verificação profissional:</strong> Faça manutenção preventiva a cada 6 meses.</p>
+                <p><strong>Limpeza de cache:</strong> Faça regularmente para manter a performance e liberar espaço de armazenamento.</p>
+                <p><strong>Apps desnecessários:</strong> Remova aplicativos que não usa para reduzir o consumo de bateria e processamento.</p>
+                <p><strong>Backup regular:</strong> Mantenha seus dados sempre seguros em nuvem ou computador para evitar perdas.</p>
+                <p><strong>Verificação profissional:</strong> Faça manutenção preventiva a cada 6 meses para identificar problemas antes que se agravem.</p>
             </div>
 
-            <div style="background: rgba(0, 212, 255, 0.1); padding: 25px; border-radius: 10px; margin-top: 40px; border-left: 4px solid var(--ciano);">
-                <h3 style="color: var(--ciano); margin-bottom: 15px; text-align: center;">💡 Dica Bônus da FelixTron</h3>
-                <p style="text-align: justify;">Traga seu celular para uma revisão preventiva conosco! Identificamos problemas antes que se tornem graves e damos orientações personalizadas para o seu dispositivo.</p>
+            <!-- Dica Bônus -->
+            <div class="dica-bonus">
+                <h3>💡 Dica Bônus da FelixTron</h3>
+                <p>Traga seu celular para uma revisão preventiva conosco! Identificamos problemas antes que se tornem graves e damos orientações personalizadas para o seu dispositivo. Uma manutenção preventiva pode evitar custos com reparos maiores no futuro.</p>
             </div>
-        </article>
 
-        <!-- Chamada para Ação -->
-        <div style="text-align: center; margin: 40px 0;">
-            <button class="btn-orcamento" onclick="redirecionarParaOrcamento()">
-                <i class="fas fa-tools"></i> Solicitar Orçamento
-            </button>
+            <h2>Conclusão</h2>
+            <p>Cuidar do seu smartphone vai muito além de apenas usar uma capa protetora. São os hábitos diários que determinam quanto tempo seu aparelho vai durar e quão bem ele vai performar.</p>
+            <p>Implementando essas práticas simples no seu dia a dia, você não só prolonga a vida útil do seu dispositivo como também mantém seu funcionamento otimizado, evitando dores de cabeça com reparos e substituições prematuras.</p>
+
+            <div class="highlight-box">
+                <h3>🔧 Precisa de uma revisão no seu celular?</h3>
+                <p>Na FelixTron, oferecemos serviço de manutenção preventiva completo. Nossos técnicos especializados avaliam seu dispositivo e indicam os cuidados específicos para o seu modelo e uso.</p>
+                <a href="https://wa.me/5573988945407?text=Olá! Gostaria de agendar uma revisão preventiva para meu celular." class="btn-back" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Falar com Especialista
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-home"></i> Voltar para Home
+                </a>
+            </div>
         </div>
     </div>
-
-    <!-- Rodapé -->
-    <footer class="blog-footer">
-        <div class="container">
-            <p>© 2025 FelixTron - Manutenção de Celulares - Todos os direitos reservados</p>
-            <p style="margin-top: 10px; opacity: 0.8;">📱 (73) 98894-5407 | ✉️ felixtroncelular@gmail.com</p>
-        </div>
-    </footer>
-
-    <script>
-        // Função para redirecionar para a página de orçamento
-        function redirecionarParaOrcamento() {
-            // Salva no localStorage que queremos ir para o orçamento
-            localStorage.setItem('paginaDestino', 'orcamento');
-            
-            // Redireciona para a página principal
-            window.location.href = 'index.html';
-        }
-
-        // Função para ser executada quando a página principal carregar
-        function processarRedirecionamento() {
-            const paginaDestino = localStorage.getItem('paginaDestino');
-            
-            if (paginaDestino === 'orcamento') {
-                // Limpa o localStorage
-                localStorage.removeItem('paginaDestino');
-                
-                // Chama a função showPage da página principal
-                if (typeof showPage === 'function') {
-                    showPage('orcamento');
-                }
-            }
-        }
-
-        // Verifica se estamos na página principal e processa o redirecionamento
-        if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
-            processarRedirecionamento();
-        }
-    </script>
 </body>
 </html>

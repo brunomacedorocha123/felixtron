@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Política de Privacidade - FelixTron</title>
+  
+  <style>
+    :root {
+      --azul-tech: #001f3f;
+      --azul-neon: #0074D9;
+      --ciano: #00D4FF;
+      --roxo-tech: #6A0DAD;
+      --roxo-neon: #B10DC9;
+      --cinza-escuro: #1a1a1a;
+      --cinza-medio: #2d2d2d;
+      --cinza-claro: #404040;
+      --branco: #ffffff;
+      --preto: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--azul-tech) 0%, var(--preto) 100%);
+      color: var(--branco);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== CABEÇALHO ===== */
+    header {
+      background: rgba(0, 31, 63, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 5%;
+      border-bottom: 3px solid var(--ciano);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 100px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-logo {
+      height: 150px;
+      width: auto;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 10px var(--ciano));
+    }
+
+    .header-logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 15px var(--ciano));
+    }
+
+    /* ===== BOTÃO VOLTAR ===== */
+    .btn-voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(45deg, var(--azul-neon), var(--roxo-tech));
+      color: var(--branco);
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: all 0.3s;
+      border: 2px solid var(--ciano);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-voltar:hover {
+      background: linear-gradient(45deg, var(--roxo-tech), var(--azul-neon));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 212, 255, 0.4);
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    .conteudo-principal {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 5%;
+      width: 100%;
+      flex: 1;
+    }
+
+    .politica-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin-top: 30px;
+    }
+
+    .politica-container h1 {
+      color: var(--ciano);
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .politica-container h2 {
+      color: var(--azul-neon);
+      font-size: 1.8em;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--ciano);
+    }
+
+    .politica-container h3 {
+      color: var(--ciano);
+      font-size: 1.4em;
+      margin: 30px 0 15px;
+    }
+
+    .politica-container p {
+      margin-bottom: 20px;
+      text-align: justify;
+      line-height: 1.7;
+    }
+
+    .politica-container ul, .politica-container ol {
+      margin: 15px 0 20px 30px;
+    }
+
+    .politica-container li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .politica-container strong {
+      color: var(--ciano);
+    }
+
+    .data-atualizacao {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+      font-style: italic;
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      background: rgba(0, 31, 63, 0.95);
+      text-align: center;
+      padding: 40px 5% 20px;
+      margin-top: 80px;
+      border-top: 3px solid var(--ciano);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-logo img {
+      height: 60px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 5px var(--ciano));
+    }
+
+    .footer-links h3,
+    .footer-contact h3 {
+      color: var(--ciano);
+      margin-bottom: 20px;
+      font-size: 1.3em;
+    }
+
+    .footer-links a {
+      color: var(--branco);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--ciano);
+    }
+
+    .footer-contact p {
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 768px) {
+      .politica-container {
+        padding: 25px;
+      }
+
+      .politica-container h1 {
+        font-size: 2em;
+      }
+
+      .politica-container h2 {
+        font-size: 1.5em;
+      }
+
+      .politica-container h3 {
+        font-size: 1.2em;
+      }
+
+      .header-logo {
+        height: 100px;
+      }
+
+      .btn-voltar {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .politica-container {
+        padding: 20px;
+      }
+
+      .politica-container h1 {
+        font-size: 1.8em;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+  
+  <!-- Ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo-container">
+      <img src="logofelixtron.png" alt="FelixTron - Manutenção de Celulares" class="header-logo">
+    </div>
+
+    <!-- Botão Voltar -->
+    <a href="index.html" class="btn-voltar">
+      <i class="fas fa-arrow-left"></i> Voltar para Home
+    </a>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <div class="conteudo-principal">
+    <div class="politica-container">
+      <h1>Política de Privacidade</h1>
+      
+      <p><strong>Última atualização:</strong> <span id="data-atual">10 de Março de 2025</span></p>
+      
+      <p>A FelixTron ("nós", "nosso" ou "a empresa") valoriza a privacidade e a segurança dos dados dos nossos clientes e visitantes. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos suas informações pessoais quando você utiliza nosso site e serviços.</p>
+      
+      <h2>1. Informações que Coletamos</h2>
+      
+      <h3>1.1. Informações Pessoais</h3>
+      <p>Coletamos as seguintes informações quando você preenche nossos formulários:</p>
+      <ul>
+        <li>Nome completo</li>
+        <li>Endereço de e-mail</li>
+        <li>Número de telefone</li>
+        <li>Modelo do aparelho</li>
+        <li>Descrição do problema/problema técnico</li>
+      </ul>
+      
+      <h3>1.2. Informações Técnicas</h3>
+      <p>Automaticamente coletamos:</p>
+      <ul>
+        <li>Endereço IP</li>
+        <li>Tipo de navegador e versão</li>
+        <li>Páginas visitadas e tempo de permanência</li>
+        <li>Dispositivo utilizado (mobile, desktop, tablet)</li>
+      </ul>
+      
+      <h2>2. Como Usamos suas Informações</h2>
+      <p>Utilizamos suas informações pessoais para:</p>
+      <ul>
+        <li>Responder suas solicitações de orçamento</li>
+        <li>Prestar os serviços de manutenção solicitados</li>
+        <li>Enviar comunicações sobre o andamento dos serviços</li>
+        <li>Enviar materiais educativos (como e-books) quando solicitado</li>
+        <li>Melhorar nossos serviços e experiência do usuário</li>
+        <li>Cumprir obrigações legais</li>
+      </ul>
+      
+      <h2>3. Compartilhamento de Informações</h2>
+      <p><strong>Não vendemos, alugamos ou comercializamos suas informações pessoais.</strong> Podemos compartilhar seus dados apenas nas seguintes situações:</p>
+      <ul>
+        <li>Com prestadores de serviços que nos auxiliam na operação do site (como hospedagem)</li>
+        <li>Para cumprir obrigações legais ou responder a solicitações judiciais</li>
+        <li>Para proteger nossos direitos, propriedade ou segurança, bem como de nossos clientes</li>
+      </ul>
+      
+      <h2>4. Armazenamento e Segurança</h2>
+      <p>Adotamos medidas técnicas e organizacionais para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. Seus dados são armazenados por:</p>
+      <ul>
+        <li><strong>Dados de contato:</strong> Até 2 anos após o último contato</li>
+        <li><strong>Dados de transações:</strong> 5 anos para fins fiscais e legais</li>
+        <li><strong>Cookies:</strong> De acordo com as configurações do seu navegador</li>
+      </ul>
+      
+      <h2>5. Seus Direitos</h2>
+      <p>De acordo com a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018), você tem direito a:</p>
+      <ul>
+        <li>Confirmar a existência de tratamento de seus dados</li>
+        <li>Acessar seus dados pessoais</li>
+        <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
+        <li>Solicitar a eliminação de dados desnecessários ou excessivos</li>
+        <li>Revogar o consentimento a qualquer momento</li>
+      </ul>
+      
+      <h2>6. Cookies e Tecnologias Similares</h2>
+      <p>Utilizamos cookies para melhorar sua experiência em nosso site. Cookies são pequenos arquivos de texto armazenados no seu dispositivo. Você pode controlar o uso de cookies através das configurações do seu navegador.</p>
+      
+      <h2>7. Links para Sites de Terceiros</h2>
+      <p>Nosso site pode conter links para outros sites. Esta Política de Privacidade se aplica apenas ao nosso site. Recomendamos que você leia as políticas de privacidade de todos os sites que visitar.</p>
+      
+      <h2>8. Alterações nesta Política</h2>
+      <p>Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre mudanças significativas através de aviso em nosso site ou por e-mail. O uso continuado de nossos serviços após as alterações constitui aceitação da nova política.</p>
+      
+      <h2>9. Contato</h2>
+      <p>Se você tiver dúvidas sobre esta Política de Privacidade ou sobre o tratamento de seus dados pessoais, entre em contato conosco:</p>
+      <ul>
+        <li><strong>E-mail:</strong> felixtroncelular@gmail.com</li>
+        <li><strong>Telefone:</strong> (73) 98894-5407</li>
+        <li><strong>Endereço:</strong> Rua C, 55, Conceição - Itabuna, BA</li>
+      </ul>
+      
+      <div class="data-atualizacao">
+        <p>Esta política entra em vigor a partir de <span id="data-efetiva">10 de Março de 2025</span>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logofelixtron.png" alt="FelixTron">
+        <p>Sua assistência técnica de confiança para reparos de celulares.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="blog.html">Blog</a>
+        <a href="ebook.html">E-book</a>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <a href="politica.html" style="color: var(--ciano);">Política de Privacidade</a>
+        <a href="termos.html">Termos e Condições</a>
+      </div>
+      
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <p>📱 (73) 98894-5407</p>
+        <p>✉️ felixtroncelular@gmail.com</p>
+        <p>📍 Endereço: Rua C, 55, Conceição - Itabuna, BA</p>
+        <a href="https://wa.me/5573988945407?text=Olá! Gostaria de solicitar um orçamento para meu celular."
+          target="_blank" style="color: var(--ciano); text-decoration: none; margin-top: 10px; display: inline-block;">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>© 2025 FelixTron - Manutenção de Celulares - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Atualizar data automaticamente
+    document.addEventListener('DOMContentLoaded', function() {
+      const dataAtual = new Date();
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      const dataFormatada = dataAtual.toLocaleDateString('pt-BR', options);
+      
+      document.getElementById('data-atual').textContent = dataFormatada;
+      document.getElementById('data-efetiva').textContent = dataFormatada;
+    });
+  </script>
+  
+</body>
+</html>

@@ -108,6 +108,8 @@
       margin-bottom: 20px;
       text-align: justify;
       text-justify: inter-word;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
       hyphens: none;
     }
 
@@ -135,6 +137,8 @@
     .highlight-box p {
       text-align: justify !important;
       text-justify: inter-word;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
       hyphens: none;
     }
 
@@ -149,6 +153,8 @@
     .warning-box p {
       text-align: justify !important;
       text-justify: inter-word;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
       hyphens: none;
     }
 
@@ -202,6 +208,62 @@
       
       .intro-image img {
         max-width: 100%;
+      }
+      
+      /* Garantir que o texto fique justificado em mobile */
+      .content p {
+        text-align: justify;
+        text-justify: inter-word;
+        -webkit-text-justify: inter-word;
+        -moz-text-justify: inter-word;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+      
+      .highlight-box p, .warning-box p {
+        text-align: justify;
+        text-justify: inter-word;
+        -webkit-text-justify: inter-word;
+        -moz-text-justify: inter-word;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+      
+      .content ul, .content ol {
+        margin-left: 20px;
+        margin-right: 10px;
+      }
+    }
+
+    /* Ajustes adicionais para telas muito pequenas */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+      
+      .header h1 {
+        font-size: 1.7em;
+      }
+      
+      .content h2 {
+        font-size: 1.5em;
+      }
+      
+      .content h3 {
+        font-size: 1.2em;
+      }
+      
+      .content ul, .content ol {
+        margin-left: 15px;
+        margin-right: 5px;
       }
     }
   </style>

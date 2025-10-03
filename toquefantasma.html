@@ -104,13 +104,12 @@
       text-align: center;
     }
 
-    /* SOLUÇÃO PARA JUSTIFICAÇÃO - funciona em todos os dispositivos */
+    /* CORREÇÃO PRINCIPAL: TODOS OS TEXTOS JUSTIFICADOS */
     .content p {
       margin-bottom: 20px;
-      text-align: justify;
-      text-align-last: left;
-      word-spacing: -0.05em;
-      letter-spacing: 0.01em;
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
     }
 
     .content ul, .content ol {
@@ -119,7 +118,9 @@
 
     .content li {
       margin-bottom: 10px;
-      text-align: left;
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
     }
 
     .highlight-box {
@@ -136,9 +137,8 @@
 
     .highlight-box p {
       text-align: justify !important;
-      text-align-last: left;
-      word-spacing: -0.05em;
-      letter-spacing: 0.01em;
+      text-justify: inter-word;
+      hyphens: none;
     }
 
     .warning-box {
@@ -151,9 +151,8 @@
 
     .warning-box p {
       text-align: justify !important;
-      text-align-last: left;
-      word-spacing: -0.05em;
-      letter-spacing: 0.01em;
+      text-justify: inter-word;
+      hyphens: none;
     }
 
     .btn-back {
@@ -180,7 +179,14 @@
       margin-right: 8px;
     }
 
-    /* Responsividade - MOBILE */
+    /* CORREÇÃO PARA TEXTOS DA INTRO-SECTION */
+    .intro-text p {
+      text-align: justify !important;
+      text-justify: inter-word;
+      hyphens: none;
+    }
+
+    /* RESPONSIVIDADE - CORREÇÃO PARA MOBILE */
     @media (max-width: 768px) {
       .container {
         padding: 20px;
@@ -208,27 +214,16 @@
         max-width: 100%;
       }
       
-      /* SOLUÇÃO DEFINITIVA PARA MOBILE */
-      .content p {
+      /* GARANTIR QUE OS TEXTOS FICAM JUSTIFICADOS NO MOBILE */
+      .content p,
+      .intro-text p,
+      .highlight-box p,
+      .warning-box p,
+      .content li {
         text-align: justify !important;
-        text-align-last: left !important;
-        -webkit-text-align-last: left !important;
-        -moz-text-align-last: left !important;
-        word-spacing: -0.05em !important;
-        letter-spacing: 0.01em !important;
-        hyphens: none !important;
-        -webkit-hyphens: none !important;
-        -moz-hyphens: none !important;
-        -ms-hyphens: none !important;
-      }
-      
-      .highlight-box p, .warning-box p {
-        text-align: justify !important;
-        text-align-last: left !important;
-        -webkit-text-align-last: left !important;
-        -moz-text-align-last: left !important;
-        word-spacing: -0.05em !important;
-        letter-spacing: 0.01em !important;
+        text-justify: inter-word !important;
+        -webkit-text-justify: inter-word !important;
+        -moz-text-justify: inter-word !important;
         hyphens: none !important;
         -webkit-hyphens: none !important;
         -moz-hyphens: none !important;
@@ -239,19 +234,9 @@
         margin-left: 20px;
         margin-right: 10px;
       }
-      
-      /* Forçar justificação em todos os elementos de texto */
-      .intro-text p {
-        text-align: justify !important;
-        text-align-last: left !important;
-        -webkit-text-align-last: left !important;
-        -moz-text-align-last: left !important;
-        word-spacing: -0.05em !important;
-        letter-spacing: 0.01em !important;
-      }
     }
 
-    /* Ajustes adicionais para telas muito pequenas */
+    /* AJUSTES ADICIONAIS PARA TELAS MUITO PEQUENAS */
     @media (max-width: 480px) {
       body {
         padding: 10px;
@@ -276,18 +261,6 @@
       .content ul, .content ol {
         margin-left: 15px;
         margin-right: 5px;
-      }
-      
-      /* Ajuste extra para garantir justificação */
-      .content p {
-        word-spacing: -0.08em !important;
-      }
-    }
-
-    /* Fallback para navegadores muito antigos */
-    @media (max-width: 768px) {
-      .content p, .highlight-box p, .warning-box p, .intro-text p {
-        text-align: left !important;
       }
     }
   </style>
@@ -412,20 +385,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Script de fallback para garantir justificação em mobile
-    document.addEventListener('DOMContentLoaded', function() {
-      if (window.innerWidth <= 768) {
-        const paragraphs = document.querySelectorAll('p');
-        paragraphs.forEach(p => {
-          p.style.textAlign = 'justify';
-          p.style.textAlignLast = 'left';
-          p.style.wordSpacing = '-0.05em';
-          p.style.letterSpacing = '0.01em';
-        });
-      }
-    });
-  </script>
 </body>
 </html>
